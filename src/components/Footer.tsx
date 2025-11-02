@@ -9,10 +9,10 @@ const Footer = () => {
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-2 font-bold text-lg">
               <Sparkles className="h-5 w-5 text-accent" />
-              AI Tools Finder
+              AI News Today Tools
             </Link>
             <p className="text-sm text-muted-foreground">
-              Discover and compare the best AI tools to supercharge your workflow.
+              Your trusted source for discovering the best AI-powered tools and services.
             </p>
             <div className="flex gap-3">
               <a href="#" className="text-muted-foreground hover:text-accent transition-colors">
@@ -55,7 +55,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t mt-8 pt-8 text-center text-sm text-muted-foreground">
-          <p>© 2025 AI Tools Finder. All rights reserved.</p>
+          <p>© 2025 AI News Today Tools. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -7,25 +7,33 @@ import { Link } from "react-router-dom";
 interface ToolCardProps {
   id: string;
   name: string;
+  slug: string;
   tagline: string;
-  category: string;
+  categories: string[];
   rating: number;
   reviewCount: number;
-  image: string;
+  thumbnailUrl: string;
   featured?: boolean;
+  toolOfTheWeek?: boolean;
 }
 
-const ToolCard = ({ id, name, tagline, category, rating, reviewCount, image, featured }: ToolCardProps) => {
+const ToolCard = ({ id, name, slug, tagline, categories, rating, reviewCount, thumbnailUrl, featured, toolOfTheWeek }: ToolCardProps) => {
   return (
     <Card className="group overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 border-border bg-card">
-      <Link to={`/tool/${id}`}>
+      <Link to={`/tools/${slug}`}>
         <div className="relative h-48 overflow-hidden bg-muted">
           <img 
-            src={image} 
-            alt={name}
+            src={thumbnailUrl} 
+            alt={`${name} - AI Tool`}
             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
           />
-          {featured && (
+          {toolOfTheWeek && (
+            <Badge className="absolute top-3 right-3 bg-gradient-to-r from-accent to-primary text-white font-semibold">
+              <Sparkles className="h-3 w-3 mr-1" />
+              Tool of the Week
+            </Badge>
+          )}
+          {featured && !toolOfTheWeek && (
             <Badge className="absolute top-3 right-3 bg-accent text-accent-foreground">
               <Sparkles className="h-3 w-3 mr-1" />
               Featured
@@ -45,10 +53,12 @@ const ToolCard = ({ id, name, tagline, category, rating, reviewCount, image, fea
             </div>
           </div>
 
-          <div className="flex items-center gap-2">
-            <Badge variant="secondary" className="text-xs">
-              {category}
-            </Badge>
+          <div className="flex items-center gap-2 flex-wrap">
+            {categories.slice(0, 2).map((cat) => (
+              <Badge key={cat} variant="secondary" className="text-xs">
+                {cat}
+              </Badge>
+            ))}
           </div>
 
           <div className="flex items-center justify-between pt-2 border-t">

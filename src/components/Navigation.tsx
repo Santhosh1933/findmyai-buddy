@@ -8,7 +8,7 @@ const Navigation = () => {
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 font-bold text-xl text-primary">
           <Sparkles className="h-6 w-6 text-accent" />
-          AI Tools Finder
+          AI News Today Tools
         </Link>
         
         <div className="hidden md:flex items-center gap-6">
