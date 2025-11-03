@@ -26,15 +26,10 @@ const Navigation = () => {
           </Link>
         </div>
 
-        <div className="flex items-center gap-3">
-          <Button variant="ghost" size="sm" className="hidden sm:flex">
-            <Search className="h-4 w-4 mr-2" />
-            Search
-          </Button>
-          <Button size="sm" className="bg-accent hover:bg-accent/90">
-            Submit Tool
-          </Button>
-        </div>
+        <Button variant="ghost" size="sm" className="hidden sm:flex">
+          <Search className="h-4 w-4 mr-2" />
+          Search
+        </Button>
       </div>
     </nav>
   );

@@ -186,18 +186,72 @@ const ToolDetail = () => {
                   </a>
                 </Button>
 
-                <Button variant="outline" className="w-full" size="lg">
-                  <Star className="h-4 w-4 mr-2" />
-                  Save to Favorites
-                </Button>
-
                 <div className="pt-4 border-t space-y-3">
                   <h3 className="font-semibold">Share this tool</h3>
-                  <div className="flex gap-2">
-                    <Button variant="outline" size="sm" className="flex-1">Twitter</Button>
-                    <Button variant="outline" size="sm" className="flex-1">LinkedIn</Button>
-                    <Button variant="outline" size="sm" className="flex-1">Copy</Button>
+                  <div className="grid grid-cols-2 gap-2">
+                    <Button 
+                      variant="outline" 
+                      size="sm"
+                      asChild
+                    >
+                      <a 
+                        href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(tool.name + ' - ' + tool.tagline)}&url=${encodeURIComponent(window.location.href)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Twitter
+                      </a>
+                    </Button>
+                    <Button 
+                      variant="outline" 
+                      size="sm"
+                      asChild
+                    >
+                      <a 
+                        href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        LinkedIn
+                      </a>
+                    </Button>
+                    <Button 
+                      variant="outline" 
+                      size="sm"
+                      asChild
+                    >
+                      <a 
+                        href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Facebook
+                      </a>
+                    </Button>
+                    <Button 
+                      variant="outline" 
+                      size="sm"
+                      asChild
+                    >
+                      <a 
+                        href={`https://wa.me/?text=${encodeURIComponent(tool.name + ' - ' + tool.tagline + '\n' + window.location.href)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        WhatsApp
+                      </a>
+                    </Button>
                   </div>
+                  <Button 
+                    variant="outline" 
+                    className="w-full"
+                    onClick={() => {
+                      navigator.clipboard.writeText(window.location.href);
+                      // You can add a toast notification here if needed
+                    }}
+                  >
+                    Copy Link
+                  </Button>
                 </div>
               </Card>
 
