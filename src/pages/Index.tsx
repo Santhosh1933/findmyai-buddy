@@ -97,7 +97,7 @@ const Index = () => {
                 <p className="text-muted-foreground mt-2">Our top picks that you absolutely should check out</p>
               </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {toolsOfTheWeek.map((tool) => (
                 <div key={tool.id} className="animate-slide-up">
                   <ToolCard {...tool} />
@@ -164,8 +164,8 @@ const Index = () => {
             </div>
             <Button variant="outline">See More</Button>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {mockTools.slice(0, 6).map((tool) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {mockTools.slice(0, 8).map((tool) => (
               <ToolCard key={tool.id} {...tool} />
             ))}
           </div>

@@ -4,6 +4,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import AdSpace from "@/components/AdSpace";
+import CompareTools from "@/components/CompareTools";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
@@ -13,6 +14,13 @@ import { mockTools } from "@/data/mockData";
 const ToolDetail = () => {
   const { slug } = useParams();
   const tool = mockTools.find(t => t.slug === slug);
+  
+  // Get tools from the same categories for comparison
+  const categoryTools = tool 
+    ? mockTools.filter(t => 
+        t.categories.some(cat => tool.categories.includes(cat)) && t.id !== tool.id
+      )
+    : [];
 
   if (!tool) {
     return (
@@ -153,29 +161,9 @@ const ToolDetail = () => {
 
                 <AdSpace size="medium" />
 
-                <div>
-                  <h2 className="text-2xl font-bold mb-4">User Reviews</h2>
-                  <div className="space-y-4">
-                    {[1, 2, 3].map((review) => (
-                      <Card key={review} className="p-6">
-                        <div className="flex items-start justify-between mb-3">
-                          <div>
-                            <p className="font-semibold">User {review}</p>
-                            <p className="text-sm text-muted-foreground">2 days ago</p>
-                          </div>
-                          <div className="flex items-center gap-1">
-                            {[...Array(5)].map((_, i) => (
-                              <Star key={i} className="h-4 w-4 fill-accent text-accent" />
-                            ))}
-                          </div>
-                        </div>
-                        <p className="text-muted-foreground">
-                          This tool has completely transformed my workflow. Highly recommended for anyone in {tool.categories[0].toLowerCase()}.
-                        </p>
-                      </Card>
-                    ))}
-                  </div>
-                </div>
+                {categoryTools.length > 0 && (
+                  <CompareTools currentTool={tool} categoryTools={categoryTools} />
+                )}
               </div>
             </div>
 
