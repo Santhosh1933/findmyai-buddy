@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Writing & Content",
+    "description": "AI tools for content creation, copywriting, and editing",
+    "toolCount": 42,
+    "slug": "writing-content"
+  },
+  {
+    "name": "Image & Design",
+    "description": "Create, edit, and enhance images with AI",
+    "toolCount": 38,
+    "slug": "image-design"
+  },
+  {
+    "name": "Data & Analytics",
+    "description": "Analyze data and generate insights with AI",
+    "toolCount": 29,
+    "slug": "data-analytics"
+  },
+  {
+    "name": "Productivity",
+    "description": "Boost your workflow with AI-powered productivity tools",
+    "toolCount": 51,
+    "slug": "productivity"
+  },
+  {
+    "name": "Video & Audio",
+    "description": "Generate, edit, and enhance video and audio content",
+    "toolCount": 24,
+    "slug": "video-audio"
+  },
+  {
+    "name": "Code & Development",
+    "description": "AI assistants for coding and software development",
+    "toolCount": 33,
+    "slug": "code-development"
+  }
+]

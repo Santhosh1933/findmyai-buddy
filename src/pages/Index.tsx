@@ -9,11 +9,17 @@ import AdSpace from "@/components/AdSpace";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Sparkles, TrendingUp, Zap, Users, PenTool, Image, Database, Code, Video, Briefcase } from "lucide-react";
-import { mockTools, categories } from "@/data/mockData";
+import { useTools, useFeaturedTools, useToolOfTheWeek } from "@/hooks/useTools";
+import { useCategories } from "@/hooks/useCategories";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const Index = () => {
-  const featuredTools = mockTools.filter(tool => tool.featured);
-  const toolsOfTheWeek = mockTools.filter(tool => tool.toolOfTheWeek);
+  const { data: tools = [], isLoading: toolsLoading } = useTools();
+  const { data: featuredTools = [] } = useFeaturedTools();
+  const { data: toolOfTheWeek } = useToolOfTheWeek();
+  const { data: categories = [], isLoading: categoriesLoading } = useCategories();
+  
+  const toolsOfTheWeek = toolOfTheWeek ? [toolOfTheWeek] : [];
   const categoryIcons = [PenTool, Image, Database, Briefcase, Video, Code];
 
   const schema = {
@@ -82,7 +88,7 @@ const Index = () => {
 
         {/* Ad Space */}
         <div className="container mx-auto px-4 py-8">
-          <AdSpace size="large" />
+          <AdSpace position="header" fallbackSize="large" />
         </div>
 
         {/* Tools of the Week */}
@@ -118,17 +124,25 @@ const Index = () => {
                 </div>
                 <Button variant="outline">View All</Button>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {featuredTools.map((tool) => (
-                  <div key={tool.id} className="animate-slide-up">
-                    <ToolCard {...tool} />
-                  </div>
-                ))}
-              </div>
+              {toolsLoading ? (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {[...Array(4)].map((_, i) => (
+                    <Skeleton key={i} className="h-64 w-full" />
+                  ))}
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {featuredTools.map((tool) => (
+                    <div key={tool.id} className="animate-slide-up">
+                      <ToolCard {...tool} />
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
 
             <div className="space-y-6">
-              <AdSpace size="sidebar" />
+              <AdSpace position="sidebar" fallbackSize="sidebar" />
             </div>
           </div>
         </section>
@@ -140,19 +154,27 @@ const Index = () => {
               <h2 className="text-3xl font-bold text-foreground mb-3">Browse by Category</h2>
               <p className="text-muted-foreground text-lg">Find tools organized by what you need to accomplish</p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {categories.map((category, index) => (
-                <div key={category.slug} className="animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
-                  <CategoryCard {...category} icon={categoryIcons[index]} />
-                </div>
-              ))}
-            </div>
+            {categoriesLoading ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {[...Array(6)].map((_, i) => (
+                  <Skeleton key={i} className="h-32 w-full" />
+                ))}
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {categories.map((category, index) => (
+                  <div key={category.slug} className="animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
+                    <CategoryCard {...category} icon={categoryIcons[index]} />
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </section>
 
         {/* Ad Space */}
         <div className="container mx-auto px-4 py-8">
-          <AdSpace size="medium" />
+          <AdSpace position="inline" fallbackSize="medium" />
         </div>
 
         {/* Latest Tools */}
@@ -164,11 +186,19 @@ const Index = () => {
             </div>
             <Button variant="outline">See More</Button>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {mockTools.slice(0, 8).map((tool) => (
-              <ToolCard key={tool.id} {...tool} />
-            ))}
-          </div>
+          {toolsLoading ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {[...Array(8)].map((_, i) => (
+                <Skeleton key={i} className="h-64 w-full" />
+              ))}
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {tools.slice(0, 8).map((tool) => (
+                <ToolCard key={tool.id} {...tool} />
+              ))}
+            </div>
+          )}
         </section>
 
         {/* CTA Section */}

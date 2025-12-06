@@ -10,7 +10,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { ArrowLeftRight, X, Star, ExternalLink, Tag } from "lucide-react";
-import { Tool } from "@/data/mockData";
+import { Tool } from "@/types";
 
 interface CompareToolsProps {
   currentTool: Tool;

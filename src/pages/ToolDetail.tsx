@@ -8,19 +8,45 @@ import CompareTools from "@/components/CompareTools";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
+import { Skeleton } from "@/components/ui/skeleton";
 import { Star, ExternalLink, ArrowLeft, Sparkles, Tag } from "lucide-react";
-import { mockTools } from "@/data/mockData";
+import { useToolBySlug, useTools } from "@/hooks/useTools";
 
 const ToolDetail = () => {
   const { slug } = useParams();
-  const tool = mockTools.find(t => t.slug === slug);
+  const { data: tool, isLoading } = useToolBySlug(slug || "");
+  const { data: tools = [] } = useTools();
   
   // Get tools from the same categories for comparison
   const categoryTools = tool 
-    ? mockTools.filter(t => 
+    ? tools.filter(t => 
         t.categories.some(cat => tool.categories.includes(cat)) && t.id !== tool.id
       )
     : [];
+
+  if (isLoading) {
+    return (
+      <HelmetProvider>
+        <div className="min-h-screen bg-background">
+          <Navigation />
+          <div className="container mx-auto px-4 py-8">
+            <Skeleton className="h-8 w-48 mb-6" />
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+              <div className="lg:col-span-3 space-y-6">
+                <Skeleton className="h-12 w-3/4" />
+                <Skeleton className="h-6 w-1/2" />
+                <Skeleton className="h-96 w-full" />
+              </div>
+              <div className="space-y-6">
+                <Skeleton className="h-64 w-full" />
+              </div>
+            </div>
+          </div>
+          <Footer />
+        </div>
+      </HelmetProvider>
+    );
+  }
 
   if (!tool) {
     return (
@@ -159,7 +185,7 @@ const ToolDetail = () => {
                   </div>
                 </div>
 
-                <AdSpace size="medium" />
+                <AdSpace position="inline" fallbackSize="medium" />
 
                 {categoryTools.length > 0 && (
                   <CompareTools currentTool={tool} categoryTools={categoryTools} />
@@ -255,7 +281,7 @@ const ToolDetail = () => {
                 </div>
               </Card>
 
-              <AdSpace size="sidebar" />
+              <AdSpace position="sidebar" fallbackSize="sidebar" />
             </div>
           </div>
         </div>
