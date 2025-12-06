@@ -18,18 +18,15 @@ const Navigation = () => {
           <Link to="/directory" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
             Browse Tools
           </Link>
-          <Link to="/categories" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-            Categories
-          </Link>
           <Link to="/about" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
             About
           </Link>
         </div>
 
-        <Button variant="ghost" size="sm" className="hidden sm:flex">
+        {/* <Button variant="ghost" size="sm" className="hidden sm:flex">
           <Search className="h-4 w-4 mr-2" />
           Search
-        </Button>
+        </Button> */}
       </div>
     </nav>
   );

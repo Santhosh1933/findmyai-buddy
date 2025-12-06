@@ -26,7 +26,7 @@ const SearchBar = () => {
         <Input 
           type="search"
           placeholder="Search for AI tools... (e.g., content writing, image generation)"
-          className="pl-12 pr-32 h-14 text-base border-2 focus-visible:ring-accent"
+          className="pl-12 pr-32 h-14 text-black border-2 focus-visible:ring-accent"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
@@ -46,7 +46,7 @@ const SearchBar = () => {
             key={tag}
             type="button"
             onClick={() => handleTagClick(tag)}
-            className="text-sm px-3 py-1 rounded-full bg-secondary hover:bg-accent/10 hover:text-accent transition-colors"
+            className="text-sm px-3 py-1 rounded-full bg-secondary/10  transition-colors"
           >
             {tag}
           </button>

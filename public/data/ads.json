@@ -2,7 +2,7 @@
   {
     "id": "ad-header",
     "position": "header",
-    "enabled": true,
+    "enabled": false,
     "size": "medium",
     "banner": "/placeholder.svg",
     "link": "https://example.com/ad1",
@@ -11,7 +11,7 @@
   {
     "id": "ad-sidebar",
     "position": "sidebar",
-    "enabled": true,
+    "enabled": false,
     "size": "sidebar",
     "banner": "/placeholder.svg",
     "link": "https://example.com/ad2",
@@ -20,7 +20,7 @@
   {
     "id": "ad-footer",
     "position": "footer",
-    "enabled": true,
+    "enabled": false,
     "size": "large",
     "banner": "/placeholder.svg",
     "link": "https://example.com/ad3",
@@ -29,7 +29,7 @@
   {
     "id": "ad-inline-1",
     "position": "inline",
-    "enabled": true,
+    "enabled": false,
     "size": "small",
     "banner": "/placeholder.svg",
     "link": "https://example.com/ad4",
@@ -38,7 +38,7 @@
   {
     "id": "ad-directory-top",
     "position": "directory-top",
-    "enabled": true,
+    "enabled": false,
     "size": "large",
     "banner": "/placeholder.svg",
     "link": "https://example.com/ad5",
@@ -47,7 +47,7 @@
   {
     "id": "ad-directory-bottom",
     "position": "directory-bottom",
-    "enabled": true,
+    "enabled": false,
     "size": "large",
     "banner": "/placeholder.svg",
     "link": "https://example.com/ad6",
