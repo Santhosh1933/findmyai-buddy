@@ -22,6 +22,9 @@ RUN rm -rf /usr/share/nginx/html/*
 # Copy built assets from the builder stage
 COPY --from=builder /app/dist /usr/share/nginx/html
 
+# Copy custom nginx configuration for SPA routing
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
 # Expose the default HTTP port
 EXPOSE 80
 

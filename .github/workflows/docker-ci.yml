@@ -28,3 +28,10 @@ jobs:
           context: .
           push: true
           tags: santhoshs19032003/tools-ainewstoday:${{ github.ref_name }},santhoshs19032003/tools-ainewstoday:latest
+
+      - name: Trigger Render deployment
+        run: |
+          curl --request POST \
+            --url "${{ secrets.RENDER_DEPLOY_HOOK }}" \
+            --header 'content-type: application/json' \
+            --data '{"ref":"${{ github.ref_name }}"}'
