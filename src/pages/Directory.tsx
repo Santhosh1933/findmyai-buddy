@@ -9,8 +9,9 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "@/components/ui/pagination";
+import { Skeleton } from "@/components/ui/skeleton";
 import { Search, SlidersHorizontal } from "lucide-react";
-import { mockTools } from "@/data/mockData";
+import { useTools } from "@/hooks/useTools";
 
 const Directory = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -18,7 +19,9 @@ const Directory = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const toolsPerPage = 16; // 4 columns x 4 rows
 
-  const filteredTools = mockTools.filter(tool => {
+  const { data: tools = [], isLoading } = useTools();
+
+  const filteredTools = tools.filter(tool => {
     const matchesSearch = tool.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          tool.tagline.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          tool.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
@@ -70,7 +73,7 @@ const Directory = () => {
         </div>
 
         <div className="container mx-auto px-4 py-8">
-          <AdSpace size="large" className="mb-8" />
+          <AdSpace position="directory-top" fallbackSize="large" className="mb-8" />
           
           <div className="space-y-8">
             <div className="flex flex-col md:flex-row gap-4">
@@ -107,7 +110,11 @@ const Directory = () => {
 
             <div className="flex items-center justify-between mb-6">
               <p className="text-muted-foreground">
-                Showing {startIndex + 1}-{Math.min(endIndex, filteredTools.length)} of {filteredTools.length} {filteredTools.length === 1 ? 'tool' : 'tools'}
+                {isLoading ? (
+                  "Loading..."
+                ) : (
+                  `Showing ${startIndex + 1}-${Math.min(endIndex, filteredTools.length)} of ${filteredTools.length} ${filteredTools.length === 1 ? 'tool' : 'tools'}`
+                )}
               </p>
               {totalPages > 1 && (
                 <p className="text-sm text-muted-foreground">
@@ -116,13 +123,21 @@ const Directory = () => {
               )}
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
-              {currentTools.map((tool) => (
-                <ToolCard key={tool.id} {...tool} />
-              ))}
-            </div>
+            {isLoading ? (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
+                {[...Array(16)].map((_, i) => (
+                  <Skeleton key={i} className="h-64 w-full" />
+                ))}
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
+                {currentTools.map((tool) => (
+                  <ToolCard key={tool.id} {...tool} />
+                ))}
+              </div>
+            )}
 
-            {filteredTools.length === 0 && (
+            {!isLoading && filteredTools.length === 0 && (
               <div className="text-center py-20">
                 <p className="text-xl text-muted-foreground mb-4">No tools found matching your criteria</p>
                 <Button variant="outline" onClick={() => { setSearchTerm(""); setSelectedCategory("all"); setCurrentPage(1); }}>
@@ -182,7 +197,7 @@ const Directory = () => {
               </Pagination>
             )}
 
-            <AdSpace size="large" />
+            <AdSpace position="directory-bottom" fallbackSize="large" />
           </div>
         </div>
 

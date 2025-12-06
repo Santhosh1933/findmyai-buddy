@@ -1,0 +1,56 @@
+[
+  {
+    "id": "ad-header",
+    "position": "header",
+    "enabled": true,
+    "size": "medium",
+    "banner": "/placeholder.svg",
+    "link": "https://example.com/ad1",
+    "alt": "Header Advertisement"
+  },
+  {
+    "id": "ad-sidebar",
+    "position": "sidebar",
+    "enabled": true,
+    "size": "sidebar",
+    "banner": "/placeholder.svg",
+    "link": "https://example.com/ad2",
+    "alt": "Sidebar Advertisement"
+  },
+  {
+    "id": "ad-footer",
+    "position": "footer",
+    "enabled": true,
+    "size": "large",
+    "banner": "/placeholder.svg",
+    "link": "https://example.com/ad3",
+    "alt": "Footer Advertisement"
+  },
+  {
+    "id": "ad-inline-1",
+    "position": "inline",
+    "enabled": true,
+    "size": "small",
+    "banner": "/placeholder.svg",
+    "link": "https://example.com/ad4",
+    "alt": "Inline Advertisement"
+  },
+  {
+    "id": "ad-directory-top",
+    "position": "directory-top",
+    "enabled": true,
+    "size": "large",
+    "banner": "/placeholder.svg",
+    "link": "https://example.com/ad5",
+    "alt": "Directory Top Advertisement"
+  },
+  {
+    "id": "ad-directory-bottom",
+    "position": "directory-bottom",
+    "enabled": true,
+    "size": "large",
+    "banner": "/placeholder.svg",
+    "link": "https://example.com/ad6",
+    "alt": "Directory Bottom Advertisement"
+  }
+]

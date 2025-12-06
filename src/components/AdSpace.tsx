@@ -1,17 +1,47 @@
 import { Card } from "@/components/ui/card";
+import { useAdByPosition } from "@/hooks/useAds";
 
 interface AdSpaceProps {
-  size: "small" | "medium" | "large" | "sidebar";
+  position: string;
   className?: string;
+  fallbackSize?: "small" | "medium" | "large" | "sidebar";
 }
 
-const AdSpace = ({ size, className = "" }: AdSpaceProps) => {
+const AdSpace = ({ position, className = "", fallbackSize = "medium" }: AdSpaceProps) => {
+  const { data: ad, isLoading } = useAdByPosition(position);
+
   const dimensions = {
     small: "h-24",
     medium: "h-48",
     large: "h-64",
     sidebar: "h-96"
   };
+
+  // Don't render if ad is disabled or not found (after loading)
+  if (!isLoading && !ad) {
+    return null;
+  }
+
+  const size = ad?.size ?? fallbackSize;
+
+  if (ad?.banner && ad.banner !== "/placeholder.svg") {
+    return (
+      <a 
+        href={ad.link} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className={`block ${className}`}
+      >
+        <Card className={`${dimensions[size]} overflow-hidden bg-ad-bg border-ad-border`}>
+          <img 
+            src={ad.banner} 
+            alt={ad.alt} 
+            className="w-full h-full object-cover"
+          />
+        </Card>
+      </a>
+    );
+  }
 
   return (
     <Card className={`${dimensions[size]} ${className} bg-ad-bg border-ad-border flex items-center justify-center`}>
