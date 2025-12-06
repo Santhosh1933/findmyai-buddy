@@ -11,8 +11,9 @@ interface CategoryCardProps {
 }
 
 const CategoryCard = ({ name, description, icon: Icon, toolCount, slug }: CategoryCardProps) => {
+  // Use the category name for filtering since that's what the Directory page uses
   return (
-    <Link to={`/category/${slug}`}>
+    <Link to={`/directory?category=${encodeURIComponent(name)}`}>
       <Card className="group p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-accent/50 cursor-pointer bg-card">
         <div className="flex items-start gap-4">
           <div className="p-3 rounded-lg bg-accent/10 text-accent transition-transform group-hover:scale-110">
