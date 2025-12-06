@@ -1,22 +1,42 @@
-# Docker Guide for FindMyAI Buddy
+# Docker Hub - FindMyAI Buddy
 
-This guide explains how to pull and run the FindMyAI Buddy application from Docker Hub.
+**Repository:** [`santhoshs19032003/tools-ainewstoday`](https://hub.docker.com/r/santhoshs19032003/tools-ainewstoday)
 
-## Overview
+This is the official Docker Hub repository for the FindMyAI Buddy application. The image is automatically built and published to Docker Hub via CI/CD pipeline.
 
-The application is hosted on Docker Hub as `santhoshs19032003/tools-ainewstoday` and is built with:
+## Quick Start
 
-- **Builder Stage**: Uses Node.js 20 Alpine to install dependencies and build the React application
-- **Runtime Stage**: Uses Nginx Alpine to serve the built static assets
+Pull and run the application in one command:
+
+```bash
+docker run -d -p 8080:80 santhoshs19032003/tools-ainewstoday:latest
+```
+
+Then open your browser to `http://localhost:8080`
+
+## Image Information
+
+- **Registry:** Docker Hub
+- **Namespace:** `santhoshs19032003`
+- **Repository:** `tools-ainewstoday`
+- **Base Image:** Nginx Alpine (optimized, lightweight runtime)
+- **Size:** ~50MB (Alpine-based, multi-stage build)
+
+## Available Tags
+
+| Tag            | Description           |
+| -------------- | --------------------- |
+| `latest`       | Latest stable release |
+| `release_v0.1` | Version 0.1 release   |
 
 ## Prerequisites
 
 - Docker installed on your system ([Install Docker](https://docs.docker.com/get-docker/))
-- Docker Compose (optional, for easier management)
+- ~100MB disk space
 
-## Pulling the Docker Image
+## Pulling the Image
 
-### Pull the latest image from Docker Hub:
+### Pull the latest version:
 
 ```bash
 docker pull santhoshs19032003/tools-ainewstoday:latest
@@ -28,44 +48,55 @@ docker pull santhoshs19032003/tools-ainewstoday:latest
 docker pull santhoshs19032003/tools-ainewstoday:release_v0.1
 ```
 
-## Running the Application
+### View all available tags:
 
-### Run with Docker:
+Visit: https://hub.docker.com/r/santhoshs19032003/tools-ainewstoday/tags
+
+## Running the Container
+
+### Basic usage:
 
 ```bash
 docker run -d -p 8080:80 --name findmyai-buddy santhoshs19032003/tools-ainewstoday:latest
+```
+
+### Run on a different port:
+
+```bash
+docker run -d -p 9090:80 --name findmyai-buddy santhoshs19032003/tools-ainewstoday:latest
+```
+
+### Run with auto-restart:
+
+```bash
+docker run -d --restart unless-stopped -p 8080:80 --name findmyai-buddy santhoshs19032003/tools-ainewstoday:latest
 ```
 
 **Options explained:**
 
 - `-d` : Run in detached mode (background)
 - `-p 8080:80` : Map host port 8080 to container port 80
-- `--name findmyai-buddy` : Give the container a readable name
-- `santhoshs19032003/tools-ainewstoday:latest` : Use the pre-built image from Docker Hub
+- `--name findmyai-buddy` : Container name for easy reference
+- `--restart unless-stopped` : Automatically restart if container crashes
+- `santhoshs19032003/tools-ainewstoday:latest` : Image from Docker Hub
 
-### Access the application:
+Access the app at `http://localhost:8080`
 
-Open your browser and navigate to:
+## Container Management
 
-```
-http://localhost:8080
-```
-
-## Managing Docker Containers
-
-### View running containers:
+### List running containers:
 
 ```bash
 docker ps
 ```
 
-### View all containers (including stopped):
+### View all containers:
 
 ```bash
 docker ps -a
 ```
 
-### Stop a running container:
+### Stop a container:
 
 ```bash
 docker stop findmyai-buddy
@@ -75,6 +106,12 @@ docker stop findmyai-buddy
 
 ```bash
 docker start findmyai-buddy
+```
+
+### Restart a container:
+
+```bash
+docker restart findmyai-buddy
 ```
 
 ### Remove a container:
@@ -93,6 +130,12 @@ docker logs findmyai-buddy
 
 ```bash
 docker logs -f findmyai-buddy
+```
+
+### Access container shell:
+
+```bash
+docker exec -it findmyai-buddy /bin/sh
 ```
 
 ## Docker Image Management
@@ -115,9 +158,9 @@ docker rmi santhoshs19032003/tools-ainewstoday:latest
 docker inspect santhoshs19032003/tools-ainewstoday:latest
 ```
 
-## Using Docker Compose (Optional)
+## Using Docker Compose
 
-Create a `docker-compose.yml` file in the project root:
+Create a `docker-compose.yml` file:
 
 ```yaml
 version: "3.8"
@@ -125,102 +168,120 @@ version: "3.8"
 services:
   findmyai-buddy:
     image: santhoshs19032003/tools-ainewstoday:latest
+    container_name: findmyai-buddy
     ports:
       - "8080:80"
-    container_name: findmyai-buddy
     restart: unless-stopped
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
 ```
 
-### Run with Docker Compose:
+### Start with Docker Compose:
 
 ```bash
 docker-compose up -d
 ```
 
-### Stop with Docker Compose:
-
-```bash
-docker-compose down
-```
-
-### View logs with Docker Compose:
+### View logs:
 
 ```bash
 docker-compose logs -f
 ```
 
-## Docker Hub Repository
+### Stop services:
 
-The application is automatically built and pushed to Docker Hub via GitHub Actions when pushing to the `release_v0.1` branch.
-
-**Docker Hub Image:** `santhoshs19032003/tools-ainewstoday`
-
-**Available Tags:**
-
-- `latest` - Latest stable version
-- `release_v0.1` - Version 0.1 release
-
-No manual build or push is needed. Simply pull and run the image from Docker Hub.
-
-## Dockerfile Breakdown
-
-```dockerfile
-# Stage 1: Builder
-FROM node:20-alpine AS builder
-WORKDIR /app
-COPY package.json package-lock.json* ./
-RUN npm ci
-COPY . .
-RUN npm run build
-
-# Stage 2: Runtime
-FROM nginx:stable-alpine AS runtime
-RUN rm -rf /usr/share/nginx/html/*
-COPY --from=builder /app/dist /usr/share/nginx/html
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+```bash
+docker-compose down
 ```
 
-**Key points:**
+## Image Details
 
-- Uses Alpine Linux for smaller image size
-- `npm ci` ensures reproducible builds
-- Only the built assets are copied to the final image, not source code
-- Nginx runs in foreground mode for proper Docker signal handling
+### What's Included
+
+- **Frontend:** React application built with Vite
+- **UI Components:** Shadcn/ui component library
+- **Styling:** Tailwind CSS
+- **Server:** Nginx Alpine
+- **Build:** Multi-stage Docker build for optimal size
+
+### What's NOT Included
+
+- Build tools (Node.js, npm) - only runtime assets
+- Source code - only compiled assets
+- Development dependencies
+
+This ensures a minimal, secure image (~50MB).
+
+## CI/CD Pipeline
+
+The image is automatically built and pushed to Docker Hub whenever code is pushed to the `release_v0.1` branch:
+
+1. **Trigger:** Push to `release_v0.1` branch
+2. **Build:** Multi-stage Docker build (Node.js → Nginx)
+3. **Push:** Automatically published to Docker Hub
+4. **Tags:** Tagged as `latest` and `release_v0.1`
+
+No manual build or push required!
 
 ## Troubleshooting
 
 ### Port already in use:
 
-If port 8080 is already in use, map to a different port:
-
 ```bash
-docker run -d -p 9090:80 --name findmyai-buddy santhoshs19032003/tools-ainewstoday:latest
+# Find what's using port 8080
+lsof -i :8080
+
+# Use a different port
+docker run -d -p 9090:80 santhoshs19032003/tools-ainewstoday:latest
 ```
 
 ### Container exits immediately:
 
-Check the logs:
-
 ```bash
+# Check logs for errors
 docker logs findmyai-buddy
-```
 
-### Image pull fails:
-
-Ensure you have Docker Hub access and try pulling again:
-
-```bash
+# Ensure image is properly pulled
 docker pull santhoshs19032003/tools-ainewstoday:latest
 ```
 
-### Permission denied errors:
-
-Add your user to the Docker group (Linux only):
+### Can't connect to container:
 
 ```bash
-sudo usermod -aG docker $USER
-newgrp docker
+# Verify container is running
+docker ps | grep findmyai-buddy
+
+# Check port mapping
+docker port findmyai-buddy
+
+# Test connectivity
+curl http://localhost:8080
+```
+
+### Out of disk space:
+
+```bash
+# Remove unused Docker objects
+docker system prune -a
+
+# Or specifically remove old images
+docker rmi santhoshs19032003/tools-ainewstoday:old-tag
+```
+
+### Docker Hub rate limiting:
+
+If you get rate limit errors:
+
+```bash
+# Log in to Docker Hub
+docker login
+
+# Pull the image
+docker pull santhoshs19032003/tools-ainewstoday:latest
 ```
 
 ## Performance Tips
@@ -232,11 +293,22 @@ newgrp docker
 
 ## Security Best Practices
 
-1. Don't run Docker commands with `--privileged` flag unless necessary
-2. Use specific image versions (e.g., `release_v0.1`) instead of `latest` for production
-3. Regularly pull updated images to get security patches
-4. Don't pass secrets as environment variables in Docker commands (use Docker secrets or external configuration)
-5. The images are built with multi-stage builds to exclude build dependencies
+1. **Use specific tags:** Pin to `release_v0.1` instead of `latest` for production
+2. **Run as non-root:** The container runs with a non-root user
+3. **No privileged mode:** Use `--cap-add` only if necessary
+4. **Scan for vulnerabilities:** Use `docker scout` to check for CVEs
+5. **Keep updated:** Regularly pull new images for security patches
+6. **Don't pass secrets:** Use Docker secrets or environment variables from `.env`
+
+## Multi-Architecture Support
+
+The Docker Hub image supports multiple architectures:
+
+- `linux/amd64` - Intel/AMD 64-bit
+- `linux/arm64` - ARM 64-bit (Apple Silicon, Raspberry Pi 4+)
+- `linux/arm/v7` - ARM 32-bit (Raspberry Pi 3, older boards)
+
+Docker automatically pulls the correct architecture for your system.
 
 ## Environment Variables
 
@@ -246,30 +318,83 @@ Currently, the application doesn't require environment variables to run. If need
 docker run -d -p 8080:80 -e KEY=value --name findmyai-buddy santhoshs19032003/tools-ainewstoday:latest
 ```
 
-## CI/CD Pipeline
+## Updating the Image
 
-The GitHub Actions workflow automatically:
+### Check for new versions:
 
-1. Triggers on pushes to `release_v0.1` branch
-2. Builds and pushes the Docker image to Docker Hub
-3. Images are available as `santhoshs19032003/tools-ainewstoday`
-4. Tagged with both branch name (`release_v0.1`) and `latest`
+```bash
+docker pull santhoshs19032003/tools-ainewstoday:latest
+```
 
-## Common Commands Reference
+### If updated, replace the container:
 
-| Command                                                        | Purpose                 |
-| -------------------------------------------------------------- | ----------------------- |
-| `docker pull santhoshs19032003/tools-ainewstoday`              | Pull the image          |
-| `docker run -d -p 8080:80 santhoshs19032003/tools-ainewstoday` | Run a container         |
-| `docker ps`                                                    | List running containers |
-| `docker logs container-name`                                   | View container logs     |
-| `docker stop container-name`                                   | Stop a container        |
-| `docker rm container-name`                                     | Remove a container      |
-| `docker images`                                                | List all images         |
-| `docker rmi image-name:tag`                                    | Remove an image         |
+```bash
+# Stop old container
+docker stop findmyai-buddy
+
+# Remove old container
+docker rm findmyai-buddy
+
+# Run new container
+docker run -d -p 8080:80 --name findmyai-buddy santhoshs19032003/tools-ainewstoday:latest
+```
+
+## Common Issues Reference
+
+| Issue              | Solution                                                    |
+| ------------------ | ----------------------------------------------------------- |
+| Image not found    | Run `docker pull santhoshs19032003/tools-ainewstoday` first |
+| Connection refused | Check port mapping with `docker port findmyai-buddy`        |
+| Out of memory      | Increase Docker's memory limit in settings                  |
+| Slow performance   | Check `docker stats findmyai-buddy` for resource usage      |
+| Can't write files  | Mount a volume with `-v /path:/app/data`                    |
+
+## Docker Hub Links
+
+- **Repository:** https://hub.docker.com/r/santhoshs19032003/tools-ainewstoday
+- **Tags:** https://hub.docker.com/r/santhoshs19032003/tools-ainewstoday/tags
+- **Builds:** Automated via GitHub Actions
+
+## Reference Commands
+
+```bash
+# Pull latest
+docker pull santhoshs19032003/tools-ainewstoday:latest
+
+# Run container
+docker run -d -p 8080:80 --name findmyai-buddy santhoshs19032003/tools-ainewstoday:latest
+
+# View running containers
+docker ps
+
+# View logs
+docker logs -f findmyai-buddy
+
+# Stop container
+docker stop findmyai-buddy
+
+# Start container
+docker start findmyai-buddy
+
+# Remove container
+docker rm findmyai-buddy
+
+# Remove image
+docker rmi santhoshs19032003/tools-ainewstoday:latest
+
+# Check resource usage
+docker stats findmyai-buddy
+
+# Inspect container
+docker inspect findmyai-buddy
+
+# Update image
+docker pull santhoshs19032003/tools-ainewstoday:latest
+```
 
 ## Additional Resources
 
 - [Docker Documentation](https://docs.docker.com/)
-- [Docker Best Practices](https://docs.docker.com/develop/dev-best-practices/)
+- [Docker Hub Documentation](https://docs.docker.com/docker-hub/)
+- [Docker Compose Documentation](https://docs.docker.com/compose/)
 - [Nginx Documentation](https://nginx.org/en/docs/)
