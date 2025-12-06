@@ -3,7 +3,7 @@ name: CI/CD Pipeline
 on:
   push:
     branches:
-      - "release_v0.1"
+      - "release_v0.0.1"
 
 jobs:
   build-and-push:
