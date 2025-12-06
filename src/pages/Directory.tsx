@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -14,10 +15,13 @@ import { Search, SlidersHorizontal } from "lucide-react";
 import { useTools } from "@/hooks/useTools";
 
 const Directory = () => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [searchParams, setSearchParams] = useSearchParams();
   const [currentPage, setCurrentPage] = useState(1);
   const toolsPerPage = 16; // 4 columns x 4 rows
+
+  // Get initial values from URL params
+  const searchTerm = searchParams.get("search") || "";
+  const selectedCategory = searchParams.get("category") || "all";
 
   const { data: tools = [], isLoading } = useTools();
 
@@ -36,13 +40,32 @@ const Directory = () => {
   const currentTools = filteredTools.slice(startIndex, endIndex);
 
   // Reset to page 1 when filters change
-  const handleSearchChange = (value: string) => {
-    setSearchTerm(value);
+  useEffect(() => {
     setCurrentPage(1);
+  }, [searchTerm, selectedCategory]);
+
+  const handleSearchChange = (value: string) => {
+    const params = new URLSearchParams(searchParams);
+    if (value) {
+      params.set("search", value);
+    } else {
+      params.delete("search");
+    }
+    setSearchParams(params);
   };
 
   const handleCategoryChange = (value: string) => {
-    setSelectedCategory(value);
+    const params = new URLSearchParams(searchParams);
+    if (value && value !== "all") {
+      params.set("category", value);
+    } else {
+      params.delete("category");
+    }
+    setSearchParams(params);
+  };
+
+  const clearFilters = () => {
+    setSearchParams({});
     setCurrentPage(1);
   };
 
@@ -98,6 +121,7 @@ const Directory = () => {
                     <SelectItem value="Image & Design">Image & Design</SelectItem>
                     <SelectItem value="Data & Analytics">Data & Analytics</SelectItem>
                     <SelectItem value="Productivity">Productivity</SelectItem>
+                    <SelectItem value="Video & Audio">Video & Audio</SelectItem>
                     <SelectItem value="Code & Development">Code & Development</SelectItem>
                   </SelectContent>
                 </Select>
@@ -112,6 +136,8 @@ const Directory = () => {
               <p className="text-muted-foreground">
                 {isLoading ? (
                   "Loading..."
+                ) : filteredTools.length === 0 ? (
+                  "No tools found"
                 ) : (
                   `Showing ${startIndex + 1}-${Math.min(endIndex, filteredTools.length)} of ${filteredTools.length} ${filteredTools.length === 1 ? 'tool' : 'tools'}`
                 )}
@@ -140,7 +166,7 @@ const Directory = () => {
             {!isLoading && filteredTools.length === 0 && (
               <div className="text-center py-20">
                 <p className="text-xl text-muted-foreground mb-4">No tools found matching your criteria</p>
-                <Button variant="outline" onClick={() => { setSearchTerm(""); setSelectedCategory("all"); setCurrentPage(1); }}>
+                <Button variant="outline" onClick={clearFilters}>
                   Clear Filters
                 </Button>
               </div>
