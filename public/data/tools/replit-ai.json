@@ -1,0 +1,16 @@
+{
+  "id": "19",
+  "name": "Replit AI",
+  "slug": "replit-ai",
+  "tagline": "Build software with AI collaboration",
+  "description": "Replit AI is an integrated coding assistant that helps you write, debug, and deploy code directly in the browser.",
+  "about": "Replit AI brings artificial intelligence to the popular online IDE. Get code suggestions, explanations, and debugging help as you build. Replit AI understands your entire project context and can help with everything from writing boilerplate to implementing complex features. Perfect for learning and rapid prototyping.",
+  "officialUrl": "https://replit.com",
+  "thumbnailUrl": "https://replit.com/favicon.ico",
+  "categories": ["Code & Development"],
+  "tags": ["coding", "ide", "collaboration", "learning", "deployment"],
+  "rating": 4.5,
+  "reviewCount": 5432,
+  "featured": false,
+  "pricing": "Free plan available, Hacker at $7/month"
+}

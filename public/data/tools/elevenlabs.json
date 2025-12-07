@@ -1,0 +1,16 @@
+{
+  "id": "23",
+  "name": "ElevenLabs",
+  "slug": "elevenlabs",
+  "tagline": "AI voice generation and cloning",
+  "description": "ElevenLabs creates realistic AI voices and voice cloning for content creators, developers, and businesses.",
+  "about": "ElevenLabs specializes in natural-sounding AI voice generation and voice cloning technology. Create voiceovers in 29 languages with emotional range and perfect pronunciation. The platform offers both pre-made voices and the ability to clone your own voice or create custom voices from scratch.",
+  "officialUrl": "https://elevenlabs.io",
+  "thumbnailUrl": "https://elevenlabs.io/favicon.ico",
+  "categories": ["Video & Audio"],
+  "tags": ["voice-synthesis", "text-to-speech", "voice-cloning", "audio", "voiceover"],
+  "rating": 4.8,
+  "reviewCount": 6543,
+  "featured": false,
+  "pricing": "Free plan available, Starter at $5/month"
+}

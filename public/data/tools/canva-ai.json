@@ -1,0 +1,16 @@
+{
+  "id": "10",
+  "name": "Canva AI",
+  "slug": "canva-ai",
+  "tagline": "Design anything with AI-powered tools",
+  "description": "Canva's AI features help you create stunning designs with text-to-image generation, Magic Eraser, and instant design suggestions.",
+  "about": "Canva AI brings powerful artificial intelligence features to the popular design platform. Create custom images with Text to Image, remove backgrounds instantly, expand images beyond their borders, and get design suggestions tailored to your needs. Perfect for both beginners and professional designers.",
+  "officialUrl": "https://canva.com",
+  "thumbnailUrl": "https://www.canva.com/favicon.ico",
+  "categories": ["Image & Design", "Productivity"],
+  "tags": ["design", "graphics", "templates", "image-editing", "branding"],
+  "rating": 4.8,
+  "reviewCount": 23451,
+  "featured": true,
+  "pricing": "Free plan available, Pro at $13/month"
+}

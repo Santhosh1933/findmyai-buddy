@@ -1,0 +1,16 @@
+{
+  "id": "22",
+  "name": "Claude AI",
+  "slug": "claude-ai",
+  "tagline": "Constitutional AI for safer conversations",
+  "description": "Claude is an AI assistant focused on being helpful, harmless, and honest in extended conversations.",
+  "about": "Claude by Anthropic is an AI assistant trained using Constitutional AI to be helpful, harmless, and honest. It excels at longer conversations, complex reasoning tasks, and following detailed instructions. Claude can process large amounts of text, making it ideal for document analysis, research assistance, and content creation.",
+  "officialUrl": "https://claude.ai",
+  "thumbnailUrl": "https://claude.ai/favicon.ico",
+  "categories": ["Writing & Content", "Productivity"],
+  "tags": ["conversational-ai", "assistant", "writing", "analysis", "research"],
+  "rating": 4.7,
+  "reviewCount": 8765,
+  "featured": true,
+  "pricing": "Free with Pro at $20/month"
+}

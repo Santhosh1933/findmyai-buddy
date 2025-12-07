@@ -1,0 +1,16 @@
+{
+  "id": "17",
+  "name": "Stable Diffusion",
+  "slug": "stable-diffusion",
+  "tagline": "Open-source AI image generation",
+  "description": "Stable Diffusion is a powerful open-source model for generating high-quality images from text descriptions.",
+  "about": "Stable Diffusion is a deep learning text-to-image model that has democratized AI art generation. Unlike proprietary alternatives, it can be run locally and customized extensively. The open-source community has created countless models, extensions, and tools around Stable Diffusion, making it incredibly versatile.",
+  "officialUrl": "https://stability.ai",
+  "thumbnailUrl": "https://stability.ai/favicon.ico",
+  "categories": ["Image & Design"],
+  "tags": ["image-generation", "open-source", "ai-art", "text-to-image", "customizable"],
+  "rating": 4.6,
+  "reviewCount": 11234,
+  "featured": false,
+  "pricing": "Free (open-source)"
+}

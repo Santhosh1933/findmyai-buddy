@@ -1,0 +1,16 @@
+{
+  "id": "11",
+  "name": "Synthesia",
+  "slug": "synthesia",
+  "tagline": "Create AI videos from text",
+  "description": "Synthesia turns text into professional videos with AI avatars in minutes, no cameras or actors needed.",
+  "about": "Synthesia is the leading AI video creation platform that allows you to create professional videos without cameras, studios, or actors. Choose from over 140 diverse AI avatars, support for 120+ languages, and create engaging video content at scale. Perfect for training videos, marketing content, and corporate communications.",
+  "officialUrl": "https://synthesia.io",
+  "thumbnailUrl": "https://www.synthesia.io/favicon.ico",
+  "categories": ["Video & Audio"],
+  "tags": ["video-creation", "ai-avatar", "text-to-video", "training", "marketing"],
+  "rating": 4.5,
+  "reviewCount": 3421,
+  "featured": false,
+  "pricing": "Subscription starting at $30/month"
+}

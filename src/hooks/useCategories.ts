@@ -14,6 +14,12 @@ export const useCategories = () => {
   return useQuery({
     queryKey: ['categories'],
     queryFn: fetchCategories,
-    staleTime: 5 * 60 * 1000, // 5 minutes
+    staleTime: 5 * 60 * 1000,
   });
+};
+
+export const useCategoryBySlug = (slug: string) => {
+  const { data: categories, ...rest } = useCategories();
+  const category = categories?.find((c) => c.slug === slug);
+  return { data: category, ...rest };
 };

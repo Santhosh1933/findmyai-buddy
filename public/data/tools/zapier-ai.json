@@ -1,0 +1,16 @@
+{
+  "id": "13",
+  "name": "Zapier AI",
+  "slug": "zapier-ai",
+  "tagline": "Automate workflows with AI",
+  "description": "Zapier AI helps you create powerful automation workflows using natural language and intelligent triggers.",
+  "about": "Zapier AI brings artificial intelligence to workflow automation. Describe what you want to automate in plain English and AI will suggest the best workflow. Connect over 5,000 apps and services with intelligent triggers and actions. Perfect for businesses looking to increase efficiency and reduce manual tasks.",
+  "officialUrl": "https://zapier.com",
+  "thumbnailUrl": "https://zapier.com/favicon.ico",
+  "categories": ["Productivity"],
+  "tags": ["automation", "workflow", "integration", "productivity", "no-code"],
+  "rating": 4.7,
+  "reviewCount": 8932,
+  "featured": false,
+  "pricing": "Free plan available, Starter at $20/month"
+}

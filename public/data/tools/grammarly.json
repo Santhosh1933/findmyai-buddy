@@ -1,0 +1,16 @@
+{
+  "id": "9",
+  "name": "Grammarly",
+  "slug": "grammarly",
+  "tagline": "AI-powered writing assistant",
+  "description": "Grammarly helps you write clear, mistake-free content with AI-powered suggestions for grammar, tone, and clarity.",
+  "about": "Grammarly is a comprehensive writing assistant that goes beyond grammar checking. It provides suggestions for clarity, engagement, and delivery, helping you communicate more effectively. With tone detection and genre-specific writing style checks, Grammarly adapts to your needs whether you're writing emails, reports, or creative content.",
+  "officialUrl": "https://grammarly.com",
+  "thumbnailUrl": "https://www.grammarly.com/favicon.ico",
+  "categories": ["Writing & Content", "Productivity"],
+  "tags": ["writing", "grammar", "editing", "proofreading", "clarity"],
+  "rating": 4.6,
+  "reviewCount": 15432,
+  "featured": false,
+  "pricing": "Free plan available, Premium at $12/month"
+}

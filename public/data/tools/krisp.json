@@ -1,0 +1,16 @@
+{
+  "id": "24",
+  "name": "Krisp",
+  "slug": "krisp",
+  "tagline": "AI-powered noise cancellation",
+  "description": "Krisp removes background noise and echo from calls using AI, ensuring crystal-clear communication.",
+  "about": "Krisp is an AI-powered audio enhancement app that removes background noise, echo, and room reverb from your calls. It works with any communication app and processes audio locally on your device for privacy. Perfect for remote workers, podcasters, and anyone who needs professional audio quality.",
+  "officialUrl": "https://krisp.ai",
+  "thumbnailUrl": "https://krisp.ai/favicon.ico",
+  "categories": ["Video & Audio", "Productivity"],
+  "tags": ["audio", "noise-cancellation", "calls", "meetings", "quality"],
+  "rating": 4.7,
+  "reviewCount": 5432,
+  "featured": false,
+  "pricing": "Free plan available, Pro at $8/month"
+}

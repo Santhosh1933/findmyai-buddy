@@ -1,0 +1,16 @@
+{
+  "id": "20",
+  "name": "Fireflies.ai",
+  "slug": "fireflies-ai",
+  "tagline": "AI meeting recorder and assistant",
+  "description": "Fireflies.ai automatically records, transcribes, and searches across your voice conversations.",
+  "about": "Fireflies.ai is an AI voice assistant that helps teams record, transcribe, search, and analyze voice conversations. It integrates with all major video conferencing platforms and automatically captures meeting notes, action items, and key topics. The AI can answer questions about past meetings and create shareable summaries.",
+  "officialUrl": "https://fireflies.ai",
+  "thumbnailUrl": "https://fireflies.ai/favicon.ico",
+  "categories": ["Productivity"],
+  "tags": ["meetings", "transcription", "note-taking", "collaboration", "voice-assistant"],
+  "rating": 4.6,
+  "reviewCount": 7234,
+  "featured": false,
+  "pricing": "Free plan available, Pro at $10/month"
+}
