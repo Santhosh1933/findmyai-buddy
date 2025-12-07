@@ -126,10 +126,10 @@ const Directory = () => {
                   </SelectContent>
                 </Select>
 
-              <Button variant="outline" className="w-full md:w-auto">
+              {/* <Button variant="outline" className="w-full md:w-auto">
                 <SlidersHorizontal className="h-4 w-4 mr-2" />
                 More Filters
-              </Button>
+              </Button> */}
             </div>
 
             <div className="flex items-center justify-between mb-6">

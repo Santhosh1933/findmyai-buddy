@@ -1,4 +1,5 @@
 import { HelmetProvider } from "react-helmet-async";
+import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SearchBar from "@/components/SearchBar";
@@ -8,19 +9,43 @@ import SEOHead from "@/components/SEOHead";
 import AdSpace from "@/components/AdSpace";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Sparkles, TrendingUp, Zap, Users, PenTool, Image, Database, Code, Video, Briefcase } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
+import {
+  Sparkles,
+  TrendingUp,
+  Zap,
+  Users,
+  PenTool,
+  Image,
+  Database,
+  Code,
+  Video,
+  Briefcase,
+  Github,
+  BookOpen,
+  GitBranch,
+} from "lucide-react";
 import { useTools, useFeaturedTools, useToolOfTheWeek } from "@/hooks/useTools";
 import { useCategories } from "@/hooks/useCategories";
 import { useAdByPosition } from "@/hooks/useAds";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Link } from "react-router-dom";
 
 const Index = () => {
+  const [showContributeDialog, setShowContributeDialog] = useState(false);
   const { data: tools = [], isLoading: toolsLoading } = useTools();
   const { data: featuredTools = [] } = useFeaturedTools();
   const { data: toolOfTheWeek } = useToolOfTheWeek();
-  const { data: categories = [], isLoading: categoriesLoading } = useCategories();
-  const { data: sidebarAd } = useAdByPosition('sidebar');
-  
+  const { data: categories = [], isLoading: categoriesLoading } =
+    useCategories();
+  const { data: sidebarAd } = useAdByPosition("sidebar");
+
   const toolsOfTheWeek = toolOfTheWeek ? [toolOfTheWeek] : [];
   const categoryIcons = [PenTool, Image, Database, Briefcase, Video, Code];
   const hasSidebarAd = !!sidebarAd;
@@ -28,18 +53,20 @@ const Index = () => {
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "AI News Today Tools",
-    "alternateName": "AI Tools Directory",
-    "url": "https://tools.ainewstoday.org",
-    "description": "Discover the best AI tools and services for writing, design, automation, data analytics, and more.",
-    "potentialAction": {
+    name: "AI News Today Tools",
+    alternateName: "AI Tools Directory",
+    url: "https://tools.ainewstoday.org",
+    description:
+      "Discover the best AI tools and services for writing, design, automation, data analytics, and more.",
+    potentialAction: {
       "@type": "SearchAction",
-      "target": {
+      target: {
         "@type": "EntryPoint",
-        "urlTemplate": "https://tools.ainewstoday.org/directory?search={search_term_string}"
+        urlTemplate:
+          "https://tools.ainewstoday.org/directory?search={search_term_string}",
       },
-      "query-input": "required name=search_term_string"
-    }
+      "query-input": "required name=search_term_string",
+    },
   };
 
   return (
@@ -52,7 +79,7 @@ const Index = () => {
           schema={schema}
         />
         <Navigation />
-        
+
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary to-primary/90 text-primary-foreground py-20 md:py-28">
           <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:20px_20px]" />
@@ -66,7 +93,8 @@ const Index = () => {
                 Find the Perfect AI Tool in Seconds
               </h1>
               <p className="text-xl md:text-2xl text-primary-foreground/80 max-w-2xl mx-auto">
-                Browse, compare, and discover AI-powered solutions for writing, design, automation, and more.
+                Browse, compare, and discover AI-powered solutions for writing,
+                design, automation, and more.
               </p>
               <div className="pt-4">
                 <SearchBar />
@@ -103,7 +131,9 @@ const Index = () => {
                   <Sparkles className="h-8 w-8 text-accent" />
                   Tools of the Week
                 </h2>
-                <p className="text-muted-foreground mt-2">Our top picks that you absolutely should check out</p>
+                <p className="text-muted-foreground mt-2">
+                  Our top picks that you absolutely should check out
+                </p>
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -118,23 +148,45 @@ const Index = () => {
 
         {/* Featured Tools */}
         <section className="container mx-auto px-4 py-16">
-          <div className={hasSidebarAd ? "grid grid-cols-1 lg:grid-cols-4 gap-8" : ""}>
-            <div className={hasSidebarAd ? "lg:col-span-3 space-y-6" : "space-y-6"}>
+          <div
+            className={
+              hasSidebarAd ? "grid grid-cols-1 lg:grid-cols-4 gap-8" : ""
+            }
+          >
+            <div
+              className={hasSidebarAd ? "lg:col-span-3 space-y-6" : "space-y-6"}
+            >
               <div className="flex items-center justify-between mb-8">
                 <div>
-                  <h2 className="text-3xl font-bold text-foreground">Featured AI Tools</h2>
-                  <p className="text-muted-foreground mt-2">Hand-picked tools that are making waves</p>
+                  <h2 className="text-3xl font-bold text-foreground">
+                    Featured AI Tools
+                  </h2>
+                  <p className="text-muted-foreground mt-2">
+                    Hand-picked tools that are making waves
+                  </p>
                 </div>
-                <Button variant="outline">View All</Button>
+                {/* <Button variant="outline">View All</Button> */}
               </div>
               {toolsLoading ? (
-                <div className={hasSidebarAd ? "grid grid-cols-1 md:grid-cols-2 gap-6" : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"}>
+                <div
+                  className={
+                    hasSidebarAd
+                      ? "grid grid-cols-1 md:grid-cols-2 gap-6"
+                      : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                  }
+                >
                   {[...Array(hasSidebarAd ? 4 : 6)].map((_, i) => (
                     <Skeleton key={i} className="h-64 w-full" />
                   ))}
                 </div>
               ) : (
-                <div className={hasSidebarAd ? "grid grid-cols-1 md:grid-cols-2 gap-6" : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"}>
+                <div
+                  className={
+                    hasSidebarAd
+                      ? "grid grid-cols-1 md:grid-cols-2 gap-6"
+                      : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                  }
+                >
                   {featuredTools.map((tool) => (
                     <div key={tool.id} className="animate-slide-up">
                       <ToolCard {...tool} />
@@ -156,8 +208,12 @@ const Index = () => {
         <section className="bg-muted/30 py-16">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-3">Browse by Category</h2>
-              <p className="text-muted-foreground text-lg">Find tools organized by what you need to accomplish</p>
+              <h2 className="text-3xl font-bold text-foreground mb-3">
+                Browse by Category
+              </h2>
+              <p className="text-muted-foreground text-lg">
+                Find tools organized by what you need to accomplish
+              </p>
             </div>
             {categoriesLoading ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -168,7 +224,11 @@ const Index = () => {
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {categories.map((category, index) => (
-                  <div key={category.slug} className="animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
+                  <div
+                    key={category.slug}
+                    className="animate-fade-in"
+                    style={{ animationDelay: `${index * 100}ms` }}
+                  >
                     <CategoryCard {...category} icon={categoryIcons[index]} />
                   </div>
                 ))}
@@ -186,10 +246,16 @@ const Index = () => {
         <section className="container mx-auto px-4 py-16">
           <div className="flex items-center justify-between mb-8">
             <div>
-              <h2 className="text-3xl font-bold text-foreground">Latest Additions</h2>
-              <p className="text-muted-foreground mt-2">Newly discovered tools worth checking out</p>
+              <h2 className="text-3xl font-bold text-foreground">
+                Latest Additions
+              </h2>
+              <p className="text-muted-foreground mt-2">
+                Newly discovered tools worth checking out
+              </p>
             </div>
-            <Button variant="outline">See More</Button>
+            <Link to={`/directory`}>
+              <Button variant="outline">See More</Button>
+            </Link>
           </div>
           {toolsLoading ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -210,21 +276,214 @@ const Index = () => {
         <section className="bg-gradient-to-br from-primary to-primary/90 text-primary-foreground py-20">
           <div className="container mx-auto px-4 text-center">
             <div className="max-w-3xl mx-auto space-y-6">
-              <h2 className="text-3xl md:text-4xl font-bold">Have an AI Tool to Share?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">
+                Have an AI Tool to Share?
+              </h2>
               <p className="text-xl text-primary-foreground/80">
-                Join our growing directory and help others discover your AI solution
+                Join our growing directory and help others discover your AI
+                solution
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+                <Button
+                  size="lg"
+                  className="bg-accent hover:bg-accent/90 text-accent-foreground"
+                  onClick={() =>
+                    window.open(
+                      "https://github.com/Santhosh1933/tools.ainewstoday.org",
+                      "_blank"
+                    )
+                  }
+                >
                   Submit Your Tool
                 </Button>
-                <Button size="lg" variant="outline" className="border-primary-foreground/30 hover:bg-primary-foreground/10 text-primary-foreground hover:text-primary-foreground">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-primary-foreground/30 bg-primary-foreground/10 text-primary-foreground hover:text-primary-foreground"
+                  onClick={() => setShowContributeDialog(true)}
+                >
                   Learn More
                 </Button>
               </div>
             </div>
           </div>
         </section>
+
+        {/* Contribute Dialog */}
+        <Dialog
+          open={showContributeDialog}
+          onOpenChange={setShowContributeDialog}
+        >
+          <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle className="flex items-center gap-2 text-2xl">
+                <Github className="h-6 w-6 text-accent" />
+                Contribute to findmyai-buddy
+              </DialogTitle>
+              <DialogDescription className="text-base mt-2">
+                Help us grow the AI tools directory by contributing your
+                knowledge and code!
+              </DialogDescription>
+            </DialogHeader>
+
+            <div className="space-y-6 mt-6">
+              {/* Step 1: Fork */}
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <div className="flex items-center justify-center w-8 h-8 rounded-full bg-accent text-accent-foreground font-semibold">
+                    1
+                  </div>
+                  <h3 className="text-lg font-semibold">Fork the Repository</h3>
+                </div>
+                <p className="text-muted-foreground ml-11">
+                  Go to{" "}
+                  <a
+                    href="https://github.com/Santhosh1933/tools.ainewstoday.org"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-accent hover:underline font-medium"
+                  >
+                    our GitHub repository
+                  </a>{" "}
+                  and click the <span className="font-semibold">Fork</span>{" "}
+                  button to create your own copy.
+                </p>
+              </div>
+
+              {/* Step 2: Clone */}
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <div className="flex items-center justify-center w-8 h-8 rounded-full bg-accent text-accent-foreground font-semibold">
+                    2
+                  </div>
+                  <h3 className="text-lg font-semibold">Clone Your Fork</h3>
+                </div>
+                <p className="text-muted-foreground ml-11">
+                  Clone the repository to your local machine:
+                </p>
+                <div className="ml-11 bg-muted p-3 rounded-lg font-mono text-sm overflow-x-auto">
+                  <code>
+                    git clone
+                    https://github.com/Santhosh1933/tools.ainewstoday.org
+                  </code>
+                </div>
+              </div>
+
+              {/* Step 3: Create Branch */}
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <div className="flex items-center justify-center w-8 h-8 rounded-full bg-accent text-accent-foreground font-semibold">
+                    3
+                  </div>
+                  <h3 className="text-lg font-semibold">
+                    Create a Feature Branch
+                  </h3>
+                </div>
+                <p className="text-muted-foreground ml-11">
+                  Create a new branch for your changes:
+                </p>
+                <div className="ml-11 bg-muted p-3 rounded-lg font-mono text-sm overflow-x-auto">
+                  <code>git checkout -b feature/your-feature-name</code>
+                </div>
+              </div>
+
+              {/* Step 4: Make Changes */}
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <div className="flex items-center justify-center w-8 h-8 rounded-full bg-accent text-accent-foreground font-semibold">
+                    4
+                  </div>
+                  <h3 className="text-lg font-semibold">Make Your Changes</h3>
+                </div>
+                <p className="text-muted-foreground ml-11">
+                  Add new AI tools, fix bugs, improve UI, or enhance
+                  documentation. Follow the project structure and coding
+                  standards.
+                </p>
+              </div>
+
+              {/* Step 5: Commit & Push */}
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <div className="flex items-center justify-center w-8 h-8 rounded-full bg-accent text-accent-foreground font-semibold">
+                    5
+                  </div>
+                  <h3 className="text-lg font-semibold">Commit and Push</h3>
+                </div>
+                <p className="text-muted-foreground ml-11">
+                  Commit your changes with a clear message and push to your
+                  fork:
+                </p>
+                <div className="ml-11 bg-muted p-3 rounded-lg font-mono text-sm overflow-x-auto space-y-2">
+                  <div>
+                    <code>git add .</code>
+                  </div>
+                  <div>
+                    <code>git commit -m "Add feature: description"</code>
+                  </div>
+                  <div>
+                    <code>git push origin feature/your-feature-name</code>
+                  </div>
+                </div>
+              </div>
+
+              {/* Step 6: Create PR */}
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <div className="flex items-center justify-center w-8 h-8 rounded-full bg-accent text-accent-foreground font-semibold">
+                    6
+                  </div>
+                  <h3 className="text-lg font-semibold">
+                    Create a Pull Request
+                  </h3>
+                </div>
+                <p className="text-muted-foreground ml-11">
+                  Go to the original repository and create a Pull Request.
+                  Describe your changes clearly and wait for review!
+                </p>
+              </div>
+
+              {/* Ways to Contribute */}
+              <div className="bg-accent/10 border border-accent/20 rounded-lg p-4 space-y-3">
+                <h4 className="font-semibold flex items-center gap-2">
+                  <BookOpen className="h-5 w-5 text-accent" />
+                  Ways to Contribute
+                </h4>
+                <ul className="space-y-2 text-sm text-muted-foreground ml-7 list-disc">
+                  <li>Add new AI tools to the directory</li>
+                  <li>Improve existing tool descriptions</li>
+                  <li>Fix bugs and improve performance</li>
+                  <li>Enhance the UI/UX design</li>
+                  <li>Write documentation and guides</li>
+                  <li>Report issues and suggest features</li>
+                </ul>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex gap-3 pt-4">
+                <Button
+                  onClick={() =>
+                    window.open(
+                      "https://github.com/Santhosh1933/tools.ainewstoday.org",
+                      "_blank"
+                    )
+                  }
+                  className="flex-1 gap-2"
+                >
+                  <Github className="h-4 w-4" />
+                  Visit GitHub Repository
+                </Button>
+                <Button
+                  variant="outline"
+                  onClick={() => setShowContributeDialog(false)}
+                  className="flex-1"
+                >
+                  Close
+                </Button>
+              </div>
+            </div>
+          </DialogContent>
+        </Dialog>
 
         <Footer />
       </div>

@@ -11,7 +11,7 @@
   {
     "id": "ad-sidebar",
     "position": "sidebar",
-    "enabled": true,
+    "enabled": false,
     "size": "sidebar",
     "banner": "/placeholder.svg",
     "link": "https://example.com/ad2",
