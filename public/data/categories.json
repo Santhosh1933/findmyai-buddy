@@ -1,38 +1,266 @@
 [
   {
+    "slug": "writing-content",
     "name": "Writing & Content",
     "description": "AI tools for content creation, copywriting, and editing",
-    "toolCount": 42,
-    "slug": "writing-content"
+    "toolCount": 7,
+    "toolOfTheWeek": "grammarly",
+    "listedTools": [
+      {
+        "name": "ChatGPT",
+        "slug": "chatgpt",
+        "path": "/data/tools/chatgpt.json",
+        "thumbnail": "https://openai.com/favicon.ico"
+      },
+      {
+        "name": "Copy.ai",
+        "slug": "copy-ai",
+        "path": "/data/tools/copy-ai.json",
+        "thumbnail": "https://www.copy.ai/favicon.ico"
+      },
+      {
+        "name": "Grammarly",
+        "slug": "grammarly",
+        "path": "/data/tools/grammarly.json",
+        "thumbnail": "https://www.grammarly.com/favicon.ico"
+      },
+      {
+        "name": "Jasper AI",
+        "slug": "jasper-ai",
+        "path": "/data/tools/jasper-ai.json",
+        "thumbnail": "https://www.jasper.ai/favicon.ico"
+      },
+      {
+        "name": "Notion AI",
+        "slug": "notion-ai",
+        "path": "/data/tools/notion-ai.json",
+        "thumbnail": "https://www.notion.so/favicon.ico"
+      },
+      {
+        "name": "Writesonic",
+        "slug": "writesonic",
+        "path": "/data/tools/writesonic.json",
+        "thumbnail": "https://writesonic.com/favicon.ico"
+      },
+      {
+        "name": "Claude AI",
+        "slug": "claude-ai",
+        "path": "/data/tools/claude-ai.json",
+        "thumbnail": "https://claude.ai/favicon.ico"
+      }
+    ]
   },
   {
+    "slug": "image-design",
     "name": "Image & Design",
     "description": "Create, edit, and enhance images with AI",
-    "toolCount": 38,
-    "slug": "image-design"
+    "toolCount": 6,
+    "toolOfTheWeek": "midjourney",
+    "listedTools": [
+      {
+        "name": "Midjourney",
+        "slug": "midjourney",
+        "path": "/data/tools/midjourney.json",
+        "thumbnail": "https://www.midjourney.com/favicon.ico"
+      },
+      {
+        "name": "DALL-E 3",
+        "slug": "dall-e-3",
+        "path": "/data/tools/dall-e-3.json",
+        "thumbnail": "https://openai.com/favicon.ico"
+      },
+      {
+        "name": "Canva AI",
+        "slug": "canva-ai",
+        "path": "/data/tools/canva-ai.json",
+        "thumbnail": "https://www.canva.com/favicon.ico"
+      },
+      {
+        "name": "Stable Diffusion",
+        "slug": "stable-diffusion",
+        "path": "/data/tools/stable-diffusion.json",
+        "thumbnail": "https://stability.ai/favicon.ico"
+      },
+      {
+        "name": "Runway ML",
+        "slug": "runway-ml",
+        "path": "/data/tools/runway-ml.json",
+        "thumbnail": "https://runwayml.com/favicon.ico"
+      },
+      {
+        "name": "Tome",
+        "slug": "tome",
+        "path": "/data/tools/tome.json",
+        "thumbnail": "https://tome.app/favicon.ico"
+      }
+    ]
   },
   {
+    "slug": "data-analytics",
     "name": "Data & Analytics",
     "description": "Analyze data and generate insights with AI",
-    "toolCount": 29,
-    "slug": "data-analytics"
+    "toolCount": 2,
+    "toolOfTheWeek": "tableau-ai",
+    "listedTools": [
+      {
+        "name": "Tableau AI",
+        "slug": "tableau-ai",
+        "path": "/data/tools/tableau-ai.json",
+        "thumbnail": "https://www.tableau.com/favicon.ico"
+      },
+      {
+        "name": "DataRobot",
+        "slug": "datarobot",
+        "path": "/data/tools/datarobot.json",
+        "thumbnail": "https://www.datarobot.com/favicon.ico"
+      }
+    ]
   },
   {
+    "slug": "productivity",
     "name": "Productivity",
     "description": "Boost your workflow with AI-powered productivity tools",
-    "toolCount": 51,
-    "slug": "productivity"
+    "toolCount": 10,
+    "toolOfTheWeek": "notion-ai",
+    "listedTools": [
+      {
+        "name": "ChatGPT",
+        "slug": "chatgpt",
+        "path": "/data/tools/chatgpt.json",
+        "thumbnail": "https://openai.com/favicon.ico"
+      },
+      {
+        "name": "Notion AI",
+        "slug": "notion-ai",
+        "path": "/data/tools/notion-ai.json",
+        "thumbnail": "https://www.notion.so/favicon.ico"
+      },
+      {
+        "name": "Grammarly",
+        "slug": "grammarly",
+        "path": "/data/tools/grammarly.json",
+        "thumbnail": "https://www.grammarly.com/favicon.ico"
+      },
+      {
+        "name": "Canva AI",
+        "slug": "canva-ai",
+        "path": "/data/tools/canva-ai.json",
+        "thumbnail": "https://www.canva.com/favicon.ico"
+      },
+      {
+        "name": "Zapier AI",
+        "slug": "zapier-ai",
+        "path": "/data/tools/zapier-ai.json",
+        "thumbnail": "https://zapier.com/favicon.ico"
+      },
+      {
+        "name": "Descript",
+        "slug": "descript",
+        "path": "/data/tools/descript.json",
+        "thumbnail": "https://www.descript.com/favicon.ico"
+      },
+      {
+        "name": "Perplexity AI",
+        "slug": "perplexity-ai",
+        "path": "/data/tools/perplexity-ai.json",
+        "thumbnail": "https://www.perplexity.ai/favicon.ico"
+      },
+      {
+        "name": "Otter.ai",
+        "slug": "otter-ai",
+        "path": "/data/tools/otter-ai.json",
+        "thumbnail": "https://otter.ai/favicon.ico"
+      },
+      {
+        "name": "Fireflies.ai",
+        "slug": "fireflies-ai",
+        "path": "/data/tools/fireflies-ai.json",
+        "thumbnail": "https://fireflies.ai/favicon.ico"
+      },
+      {
+        "name": "Claude AI",
+        "slug": "claude-ai",
+        "path": "/data/tools/claude-ai.json",
+        "thumbnail": "https://claude.ai/favicon.ico"
+      }
+    ]
   },
   {
+    "slug": "video-audio",
     "name": "Video & Audio",
     "description": "Generate, edit, and enhance video and audio content",
-    "toolCount": 24,
-    "slug": "video-audio"
+    "toolCount": 6,
+    "toolOfTheWeek": "elevenlabs",
+    "listedTools": [
+      {
+        "name": "Synthesia",
+        "slug": "synthesia",
+        "path": "/data/tools/synthesia.json",
+        "thumbnail": "https://www.synthesia.io/favicon.ico"
+      },
+      {
+        "name": "Runway ML",
+        "slug": "runway-ml",
+        "path": "/data/tools/runway-ml.json",
+        "thumbnail": "https://runwayml.com/favicon.ico"
+      },
+      {
+        "name": "Descript",
+        "slug": "descript",
+        "path": "/data/tools/descript.json",
+        "thumbnail": "https://www.descript.com/favicon.ico"
+      },
+      {
+        "name": "ElevenLabs",
+        "slug": "elevenlabs",
+        "path": "/data/tools/elevenlabs.json",
+        "thumbnail": "https://elevenlabs.io/favicon.ico"
+      },
+      {
+        "name": "Krisp",
+        "slug": "krisp",
+        "path": "/data/tools/krisp.json",
+        "thumbnail": "https://krisp.ai/favicon.ico"
+      },
+      {
+        "name": "Tome",
+        "slug": "tome",
+        "path": "/data/tools/tome.json",
+        "thumbnail": "https://tome.app/favicon.ico"
+      }
+    ]
   },
   {
+    "slug": "code-development",
     "name": "Code & Development",
     "description": "AI assistants for coding and software development",
-    "toolCount": 33,
-    "slug": "code-development"
+    "toolCount": 4,
+    "toolOfTheWeek": "github-copilot",
+    "listedTools": [
+      {
+        "name": "ChatGPT",
+        "slug": "chatgpt",
+        "path": "/data/tools/chatgpt.json",
+        "thumbnail": "https://openai.com/favicon.ico"
+      },
+      {
+        "name": "GitHub Copilot",
+        "slug": "github-copilot",
+        "path": "/data/tools/github-copilot.json",
+        "thumbnail": "https://github.com/favicon.ico"
+      },
+      {
+        "name": "Replit AI",
+        "slug": "replit-ai",
+        "path": "/data/tools/replit-ai.json",
+        "thumbnail": "https://replit.com/favicon.ico"
+      },
+      {
+        "name": "Claude AI",
+        "slug": "claude-ai",
+        "path": "/data/tools/claude-ai.json",
+        "thumbnail": "https://claude.ai/favicon.ico"
+      }
+    ]
   }
 ]

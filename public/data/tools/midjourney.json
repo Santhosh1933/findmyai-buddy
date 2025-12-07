@@ -1,0 +1,16 @@
+{
+  "id": "2",
+  "name": "Midjourney",
+  "slug": "midjourney",
+  "tagline": "Create stunning AI-generated artwork and images",
+  "description": "Midjourney is a cutting-edge AI art generator that transforms text descriptions into beautiful, unique images and artwork.",
+  "about": "Midjourney is an independent research lab producing an AI program that creates images from textual descriptions. Known for its distinctive artistic style and high-quality outputs, Midjourney has become a favorite among digital artists, designers, and creative professionals. The platform operates through Discord and offers various subscription tiers to suit different creative needs.",
+  "officialUrl": "https://midjourney.com",
+  "thumbnailUrl": "https://www.midjourney.com/favicon.ico",
+  "categories": ["Image & Design"],
+  "tags": ["image-generation", "art", "design", "creative", "diffusion"],
+  "rating": 4.7,
+  "reviewCount": 8932,
+  "featured": true,
+  "pricing": "Subscription starting at $10/month"
+}

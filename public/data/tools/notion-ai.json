@@ -1,0 +1,16 @@
+{
+  "id": "3",
+  "name": "Notion AI",
+  "slug": "notion-ai",
+  "tagline": "AI-powered workspace for notes, docs, and projects",
+  "description": "Notion AI integrates artificial intelligence directly into your workspace to help you write better, think bigger, and work faster.",
+  "about": "Notion AI brings the power of artificial intelligence to the popular Notion workspace platform. It helps users generate content, summarize documents, improve writing, and manage projects more efficiently. The AI assistant understands context from your existing notes and databases, making it a powerful tool for knowledge management and productivity.",
+  "officialUrl": "https://notion.so",
+  "thumbnailUrl": "https://www.notion.so/favicon.ico",
+  "categories": ["Productivity", "Writing & Content"],
+  "tags": ["productivity", "notes", "documentation", "writing", "workspace"],
+  "rating": 4.6,
+  "reviewCount": 6421,
+  "featured": false,
+  "pricing": "Free with AI add-on at $10/month"
+}

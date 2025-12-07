@@ -12,15 +12,23 @@ export interface Tool {
   rating: number;
   reviewCount: number;
   featured: boolean;
-  toolOfTheWeek: boolean;
   pricing: string;
 }
 
+export interface ListedTool {
+  name: string;
+  slug: string;
+  path: string;
+  thumbnail: string;
+}
+
 export interface Category {
+  slug: string;
   name: string;
   description: string;
   toolCount: number;
-  slug: string;
+  toolOfTheWeek: string;
+  listedTools: ListedTool[];
 }
 
 export interface Ad {

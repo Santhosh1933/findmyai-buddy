@@ -1,0 +1,16 @@
+{
+  "id": "5",
+  "name": "Tableau AI",
+  "slug": "tableau-ai",
+  "tagline": "Data analytics and visualization powered by AI",
+  "description": "Tableau AI brings intelligent data insights and automated analytics to help businesses make data-driven decisions faster.",
+  "about": "Tableau AI combines powerful data visualization capabilities with artificial intelligence to make data analysis accessible to everyone. The platform uses AI to suggest relevant visualizations, detect anomalies, and provide natural language insights from your data. It's trusted by thousands of organizations worldwide for business intelligence and analytics.",
+  "officialUrl": "https://tableau.com",
+  "thumbnailUrl": "https://www.tableau.com/favicon.ico",
+  "categories": ["Data & Analytics"],
+  "tags": ["data-analytics", "visualization", "business-intelligence", "reporting"],
+  "rating": 4.7,
+  "reviewCount": 4123,
+  "featured": false,
+  "pricing": "Enterprise pricing starting at $70/user/month"
+}

@@ -1,0 +1,16 @@
+{
+  "id": "16",
+  "name": "Otter.ai",
+  "slug": "otter-ai",
+  "tagline": "AI meeting assistant and transcription",
+  "description": "Otter.ai transcribes meetings in real-time, generates summaries, and captures action items automatically.",
+  "about": "Otter.ai is an AI-powered meeting assistant that joins your video calls, takes notes, and generates summaries automatically. It transcribes conversations in real-time with high accuracy, identifies speakers, and lets you search through past meetings instantly. Integrates with Zoom, Google Meet, and Microsoft Teams.",
+  "officialUrl": "https://otter.ai",
+  "thumbnailUrl": "https://otter.ai/favicon.ico",
+  "categories": ["Productivity"],
+  "tags": ["transcription", "meetings", "notes", "collaboration", "voice-to-text"],
+  "rating": 4.7,
+  "reviewCount": 9876,
+  "featured": false,
+  "pricing": "Free plan available, Pro at $10/month"
+}

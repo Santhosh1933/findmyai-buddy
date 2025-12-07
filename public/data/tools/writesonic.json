@@ -1,0 +1,16 @@
+{
+  "id": "18",
+  "name": "Writesonic",
+  "slug": "writesonic",
+  "tagline": "AI writer for articles, blogs, and ads",
+  "description": "Writesonic helps you create SEO-optimized content, marketing copy, and blog posts with AI assistance.",
+  "about": "Writesonic is an AI writing platform designed for marketers, bloggers, and businesses. It offers tools for creating long-form content, landing pages, ads, and product descriptions. With built-in SEO optimization and support for 25+ languages, Writesonic helps you scale content production while maintaining quality.",
+  "officialUrl": "https://writesonic.com",
+  "thumbnailUrl": "https://writesonic.com/favicon.ico",
+  "categories": ["Writing & Content"],
+  "tags": ["content-writing", "seo", "blog", "copywriting", "marketing"],
+  "rating": 4.4,
+  "reviewCount": 6543,
+  "featured": false,
+  "pricing": "Free trial available, Unlimited at $20/month"
+}
