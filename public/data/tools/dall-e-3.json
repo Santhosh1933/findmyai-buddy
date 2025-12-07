@@ -1,0 +1,16 @@
+{
+  "id": "8",
+  "name": "DALL-E 3",
+  "slug": "dall-e-3",
+  "tagline": "Create realistic images from text descriptions",
+  "description": "DALL-E 3 generates highly detailed and accurate images from natural language descriptions.",
+  "about": "DALL-E 3 is OpenAI's latest image generation model that understands nuance and detail to create highly accurate images. It's integrated with ChatGPT, making it easy to refine prompts and generate exactly what you're imagining. The model excels at rendering text within images and following complex multi-part instructions.",
+  "officialUrl": "https://openai.com/dall-e-3",
+  "thumbnailUrl": "https://openai.com/favicon.ico",
+  "categories": ["Image & Design"],
+  "tags": ["image-generation", "art", "creative", "design", "ai-art"],
+  "rating": 4.7,
+  "reviewCount": 9234,
+  "featured": true,
+  "pricing": "Available with ChatGPT Plus at $20/month"
+}

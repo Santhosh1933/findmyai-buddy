@@ -1,27 +1,47 @@
 import { useQuery } from '@tanstack/react-query';
-import { API_URLS } from '@/config/urls';
+import { useCategories } from './useCategories';
 import type { Tool } from '@/types';
 
-const fetchTools = async (): Promise<Tool[]> => {
-  const response = await fetch(API_URLS.tools);
+const fetchToolByPath = async (path: string): Promise<Tool> => {
+  const response = await fetch(path);
   if (!response.ok) {
-    throw new Error('Failed to fetch tools');
+    throw new Error(`Failed to fetch tool from ${path}`);
   }
   return response.json();
 };
 
+const fetchAllTools = async (paths: string[]): Promise<Tool[]> => {
+  const uniquePaths = [...new Set(paths)];
+  const tools = await Promise.all(uniquePaths.map(fetchToolByPath));
+  return tools;
+};
+
 export const useTools = () => {
+  const { data: categories, isLoading: categoriesLoading } = useCategories();
+  
+  const allToolPaths = categories?.flatMap(cat => cat.listedTools.map(t => t.path)) ?? [];
+  const uniquePaths = [...new Set(allToolPaths)];
+  
   return useQuery({
-    queryKey: ['tools'],
-    queryFn: fetchTools,
-    staleTime: 5 * 60 * 1000, // 5 minutes
+    queryKey: ['tools', uniquePaths],
+    queryFn: () => fetchAllTools(uniquePaths),
+    enabled: !categoriesLoading && uniquePaths.length > 0,
+    staleTime: 5 * 60 * 1000,
   });
 };
 
 export const useToolBySlug = (slug: string) => {
-  const { data: tools, ...rest } = useTools();
-  const tool = tools?.find((t) => t.slug === slug);
-  return { data: tool, ...rest };
+  const { data: categories } = useCategories();
+  
+  const toolInfo = categories?.flatMap(cat => cat.listedTools).find(t => t.slug === slug);
+  const toolPath = toolInfo?.path;
+  
+  return useQuery({
+    queryKey: ['tool', slug],
+    queryFn: () => fetchToolByPath(toolPath!),
+    enabled: !!toolPath,
+    staleTime: 5 * 60 * 1000,
+  });
 };
 
 export const useFeaturedTools = () => {
@@ -31,7 +51,32 @@ export const useFeaturedTools = () => {
 };
 
 export const useToolOfTheWeek = () => {
-  const { data: tools, ...rest } = useTools();
-  const toolOfTheWeek = tools?.find((t) => t.toolOfTheWeek);
-  return { data: toolOfTheWeek, ...rest };
+  const { data: categories } = useCategories();
+  
+  // Get first category's tool of the week as the main one
+  const firstCategory = categories?.[0];
+  const toolOfTheWeekSlug = firstCategory?.toolOfTheWeek;
+  const toolInfo = firstCategory?.listedTools.find(t => t.slug === toolOfTheWeekSlug);
+  const toolPath = toolInfo?.path;
+  
+  return useQuery({
+    queryKey: ['toolOfTheWeek', toolOfTheWeekSlug],
+    queryFn: () => fetchToolByPath(toolPath!),
+    enabled: !!toolPath,
+    staleTime: 5 * 60 * 1000,
+  });
+};
+
+export const useToolsByCategory = (categorySlug: string) => {
+  const { data: categories, isLoading: categoriesLoading } = useCategories();
+  
+  const category = categories?.find(cat => cat.slug === categorySlug);
+  const toolPaths = category?.listedTools.map(t => t.path) ?? [];
+  
+  return useQuery({
+    queryKey: ['tools', 'category', categorySlug],
+    queryFn: () => fetchAllTools(toolPaths),
+    enabled: !categoriesLoading && toolPaths.length > 0,
+    staleTime: 5 * 60 * 1000,
+  });
 };

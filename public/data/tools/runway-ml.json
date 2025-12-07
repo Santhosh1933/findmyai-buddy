@@ -1,0 +1,16 @@
+{
+  "id": "12",
+  "name": "Runway ML",
+  "slug": "runway-ml",
+  "tagline": "AI-powered video editing and generation",
+  "description": "Runway ML offers advanced AI tools for video editing, including text-to-video, background removal, and motion tracking.",
+  "about": "Runway ML is a next-generation creative suite powered by AI. It offers over 30+ AI Magic Tools for video editing, including real-time video generation, green screen without a green screen, and frame interpolation. Used by creative professionals worldwide to push the boundaries of storytelling.",
+  "officialUrl": "https://runwayml.com",
+  "thumbnailUrl": "https://runwayml.com/favicon.ico",
+  "categories": ["Video & Audio", "Image & Design"],
+  "tags": ["video-editing", "ai-tools", "creative", "motion-graphics", "vfx"],
+  "rating": 4.6,
+  "reviewCount": 4567,
+  "featured": false,
+  "pricing": "Free tier available, Pro at $12/month"
+}

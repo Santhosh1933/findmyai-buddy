@@ -1,0 +1,16 @@
+{
+  "id": "14",
+  "name": "Descript",
+  "slug": "descript",
+  "tagline": "Edit audio and video by editing text",
+  "description": "Descript offers AI-powered transcription and editing that lets you edit media files as easily as editing a document.",
+  "about": "Descript revolutionizes audio and video editing by letting you edit multimedia content through text transcription. Remove filler words automatically, clone your voice for corrections, create audiograms, and collaborate in real-time. It's like editing a document but you're editing audio and video.",
+  "officialUrl": "https://descript.com",
+  "thumbnailUrl": "https://www.descript.com/favicon.ico",
+  "categories": ["Video & Audio", "Productivity"],
+  "tags": ["transcription", "video-editing", "audio-editing", "podcasting", "collaboration"],
+  "rating": 4.6,
+  "reviewCount": 5621,
+  "featured": false,
+  "pricing": "Free plan available, Creator at $12/month"
+}

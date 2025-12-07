@@ -1,0 +1,16 @@
+{
+  "id": "7",
+  "name": "GitHub Copilot",
+  "slug": "github-copilot",
+  "tagline": "Your AI pair programmer",
+  "description": "GitHub Copilot suggests code and entire functions in real-time, right from your editor.",
+  "about": "GitHub Copilot is an AI coding assistant that helps developers write code faster and with less work. It draws context from comments and code to suggest individual lines and whole functions instantly. Trained on billions of lines of code, Copilot turns natural language prompts into coding suggestions across dozens of languages.",
+  "officialUrl": "https://github.com/features/copilot",
+  "thumbnailUrl": "https://github.com/favicon.ico",
+  "categories": ["Code & Development"],
+  "tags": ["coding", "development", "programming", "automation", "ai-assistant"],
+  "rating": 4.6,
+  "reviewCount": 7821,
+  "featured": true,
+  "pricing": "$10/month for individuals"
+}

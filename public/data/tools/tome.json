@@ -1,0 +1,16 @@
+{
+  "id": "21",
+  "name": "Tome",
+  "slug": "tome",
+  "tagline": "AI-powered storytelling and presentations",
+  "description": "Tome creates stunning presentations and narratives using AI, transforming your ideas into polished stories.",
+  "about": "Tome is an AI-native format for crafting and sharing ideas. It uses generative AI to help you create compelling narratives, presentations, and one-pagers with beautiful layouts. Simply start with a prompt and Tome generates an entire presentation complete with text and AI-generated images that match your content.",
+  "officialUrl": "https://tome.app",
+  "thumbnailUrl": "https://tome.app/favicon.ico",
+  "categories": ["Productivity", "Image & Design"],
+  "tags": ["presentations", "storytelling", "design", "slides", "content-creation"],
+  "rating": 4.5,
+  "reviewCount": 3987,
+  "featured": false,
+  "pricing": "Free plan available, Pro at $10/month"
+}

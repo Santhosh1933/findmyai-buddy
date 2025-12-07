@@ -1,0 +1,16 @@
+{
+  "id": "1",
+  "name": "ChatGPT",
+  "slug": "chatgpt",
+  "tagline": "Conversational AI that helps you write, learn, and brainstorm",
+  "description": "ChatGPT is an advanced AI language model that can assist with writing, coding, analysis, and creative tasks through natural conversation.",
+  "about": "Developed by OpenAI, ChatGPT represents a breakthrough in conversational AI technology. It uses advanced natural language processing to understand context, generate human-like responses, and assist with a wide range of tasks from creative writing to technical problem-solving. The model has been trained on diverse internet text and can engage in nuanced conversations while maintaining context over extended interactions.",
+  "officialUrl": "https://chat.openai.com",
+  "thumbnailUrl": "https://openai.com/favicon.ico",
+  "categories": ["Writing & Content", "Productivity", "Code & Development"],
+  "tags": ["conversational-ai", "writing", "coding", "analysis", "chatbot", "gpt"],
+  "rating": 4.8,
+  "reviewCount": 12543,
+  "featured": true,
+  "pricing": "Free with paid plans starting at $20/month"
+}

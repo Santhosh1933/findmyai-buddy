@@ -1,0 +1,16 @@
+{
+  "id": "4",
+  "name": "Jasper AI",
+  "slug": "jasper-ai",
+  "tagline": "AI copywriter for marketing teams and content creators",
+  "description": "Jasper is an AI writing assistant specialized in creating high-quality marketing copy, blog posts, and social media content.",
+  "about": "Jasper AI is built specifically for marketing professionals and content creators who need to produce high-quality copy at scale. With over 50 templates and the ability to learn your brand voice, Jasper helps teams create compelling content across multiple channels. The platform supports multiple languages and integrates with popular tools like Surfer SEO and Grammarly.",
+  "officialUrl": "https://jasper.ai",
+  "thumbnailUrl": "https://www.jasper.ai/favicon.ico",
+  "categories": ["Writing & Content"],
+  "tags": ["copywriting", "marketing", "content-creation", "seo", "blog"],
+  "rating": 4.5,
+  "reviewCount": 5234,
+  "featured": false,
+  "pricing": "Subscription starting at $49/month"
+}

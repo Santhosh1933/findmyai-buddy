@@ -118,13 +118,7 @@ const ToolDetail = () => {
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-3 flex-wrap">
                       <h1 className="text-4xl font-bold text-foreground">{tool.name}</h1>
-                      {tool.toolOfTheWeek && (
-                        <Badge className="bg-gradient-to-r from-accent to-primary text-white font-semibold">
-                          <Sparkles className="h-3 w-3 mr-1" />
-                          Tool of the Week
-                        </Badge>
-                      )}
-                      {tool.featured && !tool.toolOfTheWeek && (
+                      {tool.featured && (
                         <Badge className="bg-accent text-accent-foreground">
                           <Sparkles className="h-3 w-3 mr-1" />
                           Featured

@@ -1,0 +1,16 @@
+{
+  "id": "15",
+  "name": "Perplexity AI",
+  "slug": "perplexity-ai",
+  "tagline": "AI-powered answer engine",
+  "description": "Perplexity AI provides accurate answers to complex questions with real-time information and cited sources.",
+  "about": "Perplexity AI is an answer engine that uses large language models to provide accurate, comprehensive answers to questions. Unlike traditional search engines, it synthesizes information from multiple sources and provides direct answers with citations. Perfect for research, learning, and quick information retrieval.",
+  "officialUrl": "https://perplexity.ai",
+  "thumbnailUrl": "https://www.perplexity.ai/favicon.ico",
+  "categories": ["Productivity"],
+  "tags": ["search", "research", "question-answering", "information", "citations"],
+  "rating": 4.5,
+  "reviewCount": 4234,
+  "featured": false,
+  "pricing": "Free with Pro at $20/month"
+}

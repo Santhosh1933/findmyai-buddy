@@ -1,0 +1,16 @@
+{
+  "id": "6",
+  "name": "Copy.ai",
+  "slug": "copy-ai",
+  "tagline": "AI-powered copywriting for marketing and sales",
+  "description": "Copy.ai generates high-quality marketing copy, product descriptions, and sales emails in seconds using advanced AI.",
+  "about": "Copy.ai is designed to help marketers and sales teams overcome writer's block and scale their content production. The platform offers a wide range of templates for different use cases, from social media posts to long-form blog content. With support for 25+ languages and a user-friendly interface, Copy.ai makes it easy to generate professional copy quickly.",
+  "officialUrl": "https://copy.ai",
+  "thumbnailUrl": "https://www.copy.ai/favicon.ico",
+  "categories": ["Writing & Content"],
+  "tags": ["copywriting", "marketing", "sales", "email", "product-descriptions"],
+  "rating": 4.4,
+  "reviewCount": 3892,
+  "featured": false,
+  "pricing": "Free plan available, Pro at $49/month"
+}
