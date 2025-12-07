@@ -11,6 +11,7 @@ import { Badge } from "@/components/ui/badge";
 import { Sparkles, TrendingUp, Zap, Users, PenTool, Image, Database, Code, Video, Briefcase } from "lucide-react";
 import { useTools, useFeaturedTools, useToolOfTheWeek } from "@/hooks/useTools";
 import { useCategories } from "@/hooks/useCategories";
+import { useAdByPosition } from "@/hooks/useAds";
 import { Skeleton } from "@/components/ui/skeleton";
 
 const Index = () => {
@@ -18,9 +19,11 @@ const Index = () => {
   const { data: featuredTools = [] } = useFeaturedTools();
   const { data: toolOfTheWeek } = useToolOfTheWeek();
   const { data: categories = [], isLoading: categoriesLoading } = useCategories();
+  const { data: sidebarAd } = useAdByPosition('sidebar');
   
   const toolsOfTheWeek = toolOfTheWeek ? [toolOfTheWeek] : [];
   const categoryIcons = [PenTool, Image, Database, Briefcase, Video, Code];
+  const hasSidebarAd = !!sidebarAd;
 
   const schema = {
     "@context": "https://schema.org",
@@ -115,8 +118,8 @@ const Index = () => {
 
         {/* Featured Tools */}
         <section className="container mx-auto px-4 py-16">
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-            <div className="lg:col-span-3 space-y-6">
+          <div className={hasSidebarAd ? "grid grid-cols-1 lg:grid-cols-4 gap-8" : ""}>
+            <div className={hasSidebarAd ? "lg:col-span-3 space-y-6" : "space-y-6"}>
               <div className="flex items-center justify-between mb-8">
                 <div>
                   <h2 className="text-3xl font-bold text-foreground">Featured AI Tools</h2>
@@ -125,13 +128,13 @@ const Index = () => {
                 <Button variant="outline">View All</Button>
               </div>
               {toolsLoading ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {[...Array(4)].map((_, i) => (
+                <div className={hasSidebarAd ? "grid grid-cols-1 md:grid-cols-2 gap-6" : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"}>
+                  {[...Array(hasSidebarAd ? 4 : 6)].map((_, i) => (
                     <Skeleton key={i} className="h-64 w-full" />
                   ))}
                 </div>
               ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className={hasSidebarAd ? "grid grid-cols-1 md:grid-cols-2 gap-6" : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"}>
                   {featuredTools.map((tool) => (
                     <div key={tool.id} className="animate-slide-up">
                       <ToolCard {...tool} />
@@ -141,9 +144,11 @@ const Index = () => {
               )}
             </div>
 
-            <div className="space-y-6">
-              <AdSpace position="sidebar" fallbackSize="sidebar" />
-            </div>
+            {hasSidebarAd && (
+              <div className="space-y-6">
+                <AdSpace position="sidebar" fallbackSize="sidebar" />
+              </div>
+            )}
           </div>
         </section>
 
