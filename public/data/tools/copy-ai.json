@@ -9,8 +9,11 @@
   "thumbnailUrl": "https://www.copy.ai/favicon.ico",
   "categories": ["Writing & Content"],
   "tags": ["copywriting", "marketing", "sales", "email", "product-descriptions"],
-  "rating": 4.4,
-  "reviewCount": 3892,
   "featured": false,
-  "pricing": "Free plan available, Pro at $49/month"
+  "pricing": "Free plan available, Pro at $49/month",
+  "seo": {
+    "metaDescription": "Copy.ai helps marketers create compelling copy for ads, emails, social media, and more with AI assistance.",
+    "keywords": ["Copy.ai", "AI copywriting", "marketing copy", "content creation", "ad copy"],
+    "linkType": "dofollow"
+  }
 }

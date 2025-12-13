@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Star, ExternalLink, ArrowLeft, Sparkles, Tag } from "lucide-react";
+import { ExternalLink, ArrowLeft, Sparkles, Tag } from "lucide-react";
 import { useToolBySlug, useTools } from "@/hooks/useTools";
 
 const ToolDetail = () => {
@@ -17,7 +17,6 @@ const ToolDetail = () => {
   const { data: tool, isLoading } = useToolBySlug(slug || "");
   const { data: tools = [] } = useTools();
   
-  // Get tools from the same categories for comparison
   const categoryTools = tool 
     ? tools.filter(t => 
         t.categories.some(cat => tool.categories.includes(cat)) && t.id !== tool.id
@@ -74,7 +73,7 @@ const ToolDetail = () => {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": tool.name,
-    "description": tool.description,
+    "description": tool.seo?.metaDescription || tool.description,
     "url": tool.officialUrl,
     "image": tool.thumbnailUrl,
     "applicationCategory": "BusinessApplication",
@@ -82,13 +81,6 @@ const ToolDetail = () => {
       "@type": "Offer",
       "price": tool.pricing.includes("Free") ? "0" : "varies",
       "priceCurrency": "USD"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": tool.rating.toString(),
-      "reviewCount": tool.reviewCount.toString(),
-      "bestRating": "5",
-      "worstRating": "1"
     }
   };
 
@@ -97,7 +89,7 @@ const ToolDetail = () => {
       <div className="min-h-screen bg-background">
         <SEOHead
           title={`${tool.name} - ${tool.tagline}`}
-          description={tool.description}
+          description={tool.seo?.metaDescription || tool.description}
           canonical={`/tools/${tool.slug}`}
           ogType="article"
           schema={schema}
@@ -111,7 +103,6 @@ const ToolDetail = () => {
           </Link>
 
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-            {/* Main Content */}
             <div className="lg:col-span-3 space-y-6">
               <div className="space-y-4">
                 <div className="flex items-start justify-between gap-4">
@@ -130,22 +121,6 @@ const ToolDetail = () => {
                 </div>
 
                 <div className="flex flex-wrap items-center gap-4">
-                  <div className="flex items-center gap-2">
-                    <div className="flex items-center gap-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star
-                          key={i}
-                          className={`h-5 w-5 ${
-                            i < Math.floor(tool.rating)
-                              ? "fill-accent text-accent"
-                              : "text-muted-foreground"
-                          }`}
-                        />
-                      ))}
-                    </div>
-                    <span className="font-semibold">{tool.rating}</span>
-                    <span className="text-muted-foreground">({tool.reviewCount} reviews)</span>
-                  </div>
                   {tool.categories.map((category) => (
                     <Badge key={category} variant="secondary">{category}</Badge>
                   ))}
@@ -187,7 +162,6 @@ const ToolDetail = () => {
               </div>
             </div>
 
-            {/* Sidebar */}
             <div className="space-y-6">
               <Card className="p-6 space-y-4 sticky top-24">
                 <div>
@@ -209,11 +183,7 @@ const ToolDetail = () => {
                 <div className="pt-4 border-t space-y-3">
                   <h3 className="font-semibold">Share this tool</h3>
                   <div className="grid grid-cols-2 gap-2">
-                    <Button 
-                      variant="outline" 
-                      size="sm"
-                      asChild
-                    >
+                    <Button variant="outline" size="sm" asChild>
                       <a 
                         href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(tool.name + ' - ' + tool.tagline)}&url=${encodeURIComponent(window.location.href)}`}
                         target="_blank"
@@ -222,11 +192,7 @@ const ToolDetail = () => {
                         Twitter
                       </a>
                     </Button>
-                    <Button 
-                      variant="outline" 
-                      size="sm"
-                      asChild
-                    >
+                    <Button variant="outline" size="sm" asChild>
                       <a 
                         href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`}
                         target="_blank"
@@ -235,11 +201,7 @@ const ToolDetail = () => {
                         LinkedIn
                       </a>
                     </Button>
-                    <Button 
-                      variant="outline" 
-                      size="sm"
-                      asChild
-                    >
+                    <Button variant="outline" size="sm" asChild>
                       <a 
                         href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`}
                         target="_blank"
@@ -248,11 +210,7 @@ const ToolDetail = () => {
                         Facebook
                       </a>
                     </Button>
-                    <Button 
-                      variant="outline" 
-                      size="sm"
-                      asChild
-                    >
+                    <Button variant="outline" size="sm" asChild>
                       <a 
                         href={`https://wa.me/?text=${encodeURIComponent(tool.name + ' - ' + tool.tagline + '\n' + window.location.href)}`}
                         target="_blank"
@@ -265,10 +223,7 @@ const ToolDetail = () => {
                   <Button 
                     variant="outline" 
                     className="w-full"
-                    onClick={() => {
-                      navigator.clipboard.writeText(window.location.href);
-                      // You can add a toast notification here if needed
-                    }}
+                    onClick={() => navigator.clipboard.writeText(window.location.href)}
                   >
                     Copy Link
                   </Button>

@@ -9,8 +9,11 @@
   "thumbnailUrl": "https://runwayml.com/favicon.ico",
   "categories": ["Video & Audio", "Image & Design"],
   "tags": ["video-editing", "ai-tools", "creative", "motion-graphics", "vfx"],
-  "rating": 4.6,
-  "reviewCount": 4567,
   "featured": false,
-  "pricing": "Free tier available, Pro at $12/month"
+  "pricing": "Free tier available, Pro at $12/month",
+  "seo": {
+    "metaDescription": "Runway ML provides advanced AI tools for video editing, generation, and visual effects creation.",
+    "keywords": ["Runway ML", "AI video", "video editing", "Gen-2", "AI creative tools"],
+    "linkType": "dofollow"
+  }
 }

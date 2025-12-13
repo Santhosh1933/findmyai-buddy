@@ -9,8 +9,11 @@
   "thumbnailUrl": "https://openai.com/favicon.ico",
   "categories": ["Writing & Content", "Productivity", "Code & Development"],
   "tags": ["conversational-ai", "writing", "coding", "analysis", "chatbot", "gpt"],
-  "rating": 4.8,
-  "reviewCount": 12543,
   "featured": true,
-  "pricing": "Free with paid plans starting at $20/month"
+  "pricing": "Free with paid plans starting at $20/month",
+  "seo": {
+    "metaDescription": "ChatGPT is a powerful conversational AI tool used for writing, coding, productivity and creative tasks.",
+    "keywords": ["ChatGPT", "AI writing tool", "AI chatbot", "GPT", "OpenAI"],
+    "linkType": "dofollow"
+  }
 }

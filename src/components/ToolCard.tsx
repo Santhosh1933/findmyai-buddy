@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Star, ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 
 interface ToolCardProps {
@@ -10,14 +10,13 @@ interface ToolCardProps {
   slug: string;
   tagline: string;
   categories: string[];
-  rating: number;
-  reviewCount: number;
   thumbnailUrl: string;
   featured?: boolean;
   toolOfTheWeek?: boolean;
+  pricing?: string;
 }
 
-const ToolCard = ({ id, name, slug, tagline, categories, rating, reviewCount, thumbnailUrl, featured, toolOfTheWeek }: ToolCardProps) => {
+const ToolCard = ({ id, name, slug, tagline, categories, thumbnailUrl, featured, toolOfTheWeek, pricing }: ToolCardProps) => {
   return (
     <Card className="group overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 border-border bg-card">
       <Link to={`/tools/${slug}`}>
@@ -62,13 +61,11 @@ const ToolCard = ({ id, name, slug, tagline, categories, rating, reviewCount, th
           </div>
 
           <div className="flex items-center justify-between pt-2 border-t">
-            <div className="flex items-center gap-1">
-              <Star className="h-4 w-4 fill-accent text-accent" />
-              <span className="text-sm font-medium">{rating}</span>
-              <span className="text-xs text-muted-foreground">({reviewCount})</span>
-            </div>
+            {pricing && (
+              <span className="text-sm text-muted-foreground">{pricing}</span>
+            )}
             
-            <Button variant="ghost" size="sm" className="text-accent hover:text-accent/90 hover:bg-accent/10">
+            <Button variant="ghost" size="sm" className="text-accent hover:text-accent/90 hover:bg-accent/10 ml-auto">
               View Details
               <ArrowRight className="h-4 w-4 ml-1 transition-transform group-hover:translate-x-1" />
             </Button>

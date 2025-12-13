@@ -9,8 +9,11 @@
   "thumbnailUrl": "https://stability.ai/favicon.ico",
   "categories": ["Image & Design"],
   "tags": ["image-generation", "open-source", "ai-art", "text-to-image", "customizable"],
-  "rating": 4.6,
-  "reviewCount": 11234,
   "featured": false,
-  "pricing": "Free (open-source)"
+  "pricing": "Free (open-source)",
+  "seo": {
+    "metaDescription": "Stable Diffusion is a powerful open-source model for generating high-quality images from text descriptions.",
+    "keywords": ["Stable Diffusion", "open source AI", "image generation", "AI art", "text to image"],
+    "linkType": "dofollow"
+  }
 }

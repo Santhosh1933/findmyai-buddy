@@ -9,8 +9,11 @@
   "thumbnailUrl": "https://www.jasper.ai/favicon.ico",
   "categories": ["Writing & Content"],
   "tags": ["copywriting", "marketing", "content-creation", "seo", "blog"],
-  "rating": 4.5,
-  "reviewCount": 5234,
   "featured": false,
-  "pricing": "Subscription starting at $49/month"
+  "pricing": "Subscription starting at $49/month",
+  "seo": {
+    "metaDescription": "Jasper AI is an AI content platform that helps marketing teams create on-brand content at scale.",
+    "keywords": ["Jasper AI", "AI marketing", "content creation", "copywriting", "marketing AI"],
+    "linkType": "dofollow"
+  }
 }

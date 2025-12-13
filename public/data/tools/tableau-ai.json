@@ -9,8 +9,11 @@
   "thumbnailUrl": "https://www.tableau.com/favicon.ico",
   "categories": ["Data & Analytics"],
   "tags": ["data-analytics", "visualization", "business-intelligence", "reporting"],
-  "rating": 4.7,
-  "reviewCount": 4123,
   "featured": false,
-  "pricing": "Enterprise pricing starting at $70/user/month"
+  "pricing": "Enterprise pricing starting at $70/user/month",
+  "seo": {
+    "metaDescription": "Tableau AI enhances business intelligence with automated insights, natural language queries, and predictive analytics.",
+    "keywords": ["Tableau AI", "business intelligence", "data analytics", "AI insights", "visualization"],
+    "linkType": "dofollow"
+  }
 }
