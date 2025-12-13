@@ -9,8 +9,11 @@
   "thumbnailUrl": "https://www.descript.com/favicon.ico",
   "categories": ["Video & Audio", "Productivity"],
   "tags": ["transcription", "video-editing", "audio-editing", "podcasting", "collaboration"],
-  "rating": 4.6,
-  "reviewCount": 5621,
   "featured": false,
-  "pricing": "Free plan available, Creator at $12/month"
+  "pricing": "Free plan available, Creator at $12/month",
+  "seo": {
+    "metaDescription": "Descript makes editing audio and video as easy as editing text with AI transcription and voice cloning.",
+    "keywords": ["Descript", "AI video editing", "audio editing", "podcast editing", "transcription"],
+    "linkType": "dofollow"
+  }
 }

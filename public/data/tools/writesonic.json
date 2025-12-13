@@ -9,8 +9,11 @@
   "thumbnailUrl": "https://writesonic.com/favicon.ico",
   "categories": ["Writing & Content"],
   "tags": ["content-writing", "seo", "blog", "copywriting", "marketing"],
-  "rating": 4.4,
-  "reviewCount": 6543,
   "featured": false,
-  "pricing": "Free trial available, Unlimited at $20/month"
+  "pricing": "Free trial available, Unlimited at $20/month",
+  "seo": {
+    "metaDescription": "Writesonic helps you create SEO-optimized content, marketing copy, and blog posts with AI assistance.",
+    "keywords": ["Writesonic", "AI writing", "SEO content", "blog writing", "AI copywriter"],
+    "linkType": "dofollow"
+  }
 }

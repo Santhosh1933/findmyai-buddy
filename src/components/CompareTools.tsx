@@ -9,7 +9,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { ArrowLeftRight, X, Star, ExternalLink, Tag } from "lucide-react";
+import { ArrowLeftRight, X, ExternalLink, Tag } from "lucide-react";
 import { Tool } from "@/types";
 
 interface CompareToolsProps {
@@ -92,15 +92,6 @@ const CompareTools = ({ currentTool, categoryTools }: CompareToolsProps) => {
           
           <div className="space-y-3 pt-2 border-t">
             <div>
-              <p className="text-xs text-muted-foreground uppercase tracking-wide mb-1">Rating</p>
-              <div className="flex items-center gap-2">
-                <Star className="h-4 w-4 fill-accent text-accent" />
-                <span className="font-medium">{currentTool.rating}</span>
-                <span className="text-sm text-muted-foreground">({currentTool.reviewCount} reviews)</span>
-              </div>
-            </div>
-
-            <div>
               <p className="text-xs text-muted-foreground uppercase tracking-wide mb-1">Pricing</p>
               <p className="text-sm font-medium">{currentTool.pricing}</p>
             </div>
@@ -156,15 +147,6 @@ const CompareTools = ({ currentTool, categoryTools }: CompareToolsProps) => {
           </div>
           
           <div className="space-y-3 pt-2 border-t">
-            <div>
-              <p className="text-xs text-muted-foreground uppercase tracking-wide mb-1">Rating</p>
-              <div className="flex items-center gap-2">
-                <Star className="h-4 w-4 fill-accent text-accent" />
-                <span className="font-medium">{compareWith.rating}</span>
-                <span className="text-sm text-muted-foreground">({compareWith.reviewCount} reviews)</span>
-              </div>
-            </div>
-
             <div>
               <p className="text-xs text-muted-foreground uppercase tracking-wide mb-1">Pricing</p>
               <p className="text-sm font-medium">{compareWith.pricing}</p>

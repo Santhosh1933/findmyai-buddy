@@ -9,8 +9,11 @@
   "thumbnailUrl": "https://www.synthesia.io/favicon.ico",
   "categories": ["Video & Audio"],
   "tags": ["video-creation", "ai-avatar", "text-to-video", "training", "marketing"],
-  "rating": 4.5,
-  "reviewCount": 3421,
   "featured": false,
-  "pricing": "Subscription starting at $30/month"
+  "pricing": "Subscription starting at $30/month",
+  "seo": {
+    "metaDescription": "Synthesia turns text into professional videos with AI avatars in minutes, no cameras or actors needed.",
+    "keywords": ["Synthesia", "AI video", "text to video", "AI avatar", "video creation"],
+    "linkType": "dofollow"
+  }
 }

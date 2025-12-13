@@ -9,8 +9,11 @@
   "thumbnailUrl": "https://www.grammarly.com/favicon.ico",
   "categories": ["Writing & Content", "Productivity"],
   "tags": ["writing", "grammar", "editing", "proofreading", "clarity"],
-  "rating": 4.6,
-  "reviewCount": 15432,
   "featured": false,
-  "pricing": "Free plan available, Premium at $12/month"
+  "pricing": "Free plan available, Premium at $12/month",
+  "seo": {
+    "metaDescription": "Grammarly is an AI-powered writing assistant that helps you write clearly with grammar, spelling, and style suggestions.",
+    "keywords": ["Grammarly", "grammar checker", "writing assistant", "proofreading", "AI writing"],
+    "linkType": "dofollow"
+  }
 }

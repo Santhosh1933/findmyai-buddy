@@ -9,8 +9,11 @@
   "thumbnailUrl": "https://replit.com/favicon.ico",
   "categories": ["Code & Development"],
   "tags": ["coding", "ide", "collaboration", "learning", "deployment"],
-  "rating": 4.5,
-  "reviewCount": 5432,
   "featured": false,
-  "pricing": "Free plan available, Hacker at $7/month"
+  "pricing": "Free plan available, Hacker at $7/month",
+  "seo": {
+    "metaDescription": "Replit AI is an integrated coding assistant that helps you write, debug, and deploy code directly in the browser.",
+    "keywords": ["Replit AI", "AI coding", "online IDE", "code assistant", "AI programming"],
+    "linkType": "dofollow"
+  }
 }

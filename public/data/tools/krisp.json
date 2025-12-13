@@ -9,8 +9,11 @@
   "thumbnailUrl": "https://krisp.ai/favicon.ico",
   "categories": ["Video & Audio", "Productivity"],
   "tags": ["audio", "noise-cancellation", "calls", "meetings", "quality"],
-  "rating": 4.7,
-  "reviewCount": 5432,
   "featured": false,
-  "pricing": "Free plan available, Pro at $8/month"
+  "pricing": "Free plan available, Pro at $8/month",
+  "seo": {
+    "metaDescription": "Krisp removes background noise and echo from your calls using AI, ensuring crystal-clear communication.",
+    "keywords": ["Krisp", "noise cancellation", "AI audio", "background noise removal", "call quality"],
+    "linkType": "dofollow"
+  }
 }

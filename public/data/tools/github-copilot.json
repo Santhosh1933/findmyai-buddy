@@ -9,8 +9,11 @@
   "thumbnailUrl": "https://github.com/favicon.ico",
   "categories": ["Code & Development"],
   "tags": ["coding", "development", "programming", "automation", "ai-assistant"],
-  "rating": 4.6,
-  "reviewCount": 7821,
   "featured": true,
-  "pricing": "$10/month for individuals"
+  "pricing": "$10/month for individuals",
+  "seo": {
+    "metaDescription": "GitHub Copilot is an AI pair programmer that suggests code and functions in real-time from your editor.",
+    "keywords": ["GitHub Copilot", "AI coding", "code assistant", "AI programmer", "coding AI"],
+    "linkType": "dofollow"
+  }
 }

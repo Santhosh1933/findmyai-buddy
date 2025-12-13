@@ -9,8 +9,11 @@
   "thumbnailUrl": "https://www.notion.so/favicon.ico",
   "categories": ["Productivity", "Writing & Content"],
   "tags": ["productivity", "notes", "documentation", "writing", "workspace"],
-  "rating": 4.6,
-  "reviewCount": 6421,
   "featured": false,
-  "pricing": "Free with AI add-on at $10/month"
+  "pricing": "Free with AI add-on at $10/month",
+  "seo": {
+    "metaDescription": "Notion AI brings artificial intelligence directly into your workspace for writing, summarizing, and brainstorming.",
+    "keywords": ["Notion AI", "AI productivity", "AI writing", "workspace AI", "Notion"],
+    "linkType": "dofollow"
+  }
 }
