@@ -25,6 +25,7 @@ export interface ListedTool {
   slug: string;
   path: string;
   thumbnail: string;
+  toolOfTheWeek?: boolean;
 }
 
 export interface Category {
