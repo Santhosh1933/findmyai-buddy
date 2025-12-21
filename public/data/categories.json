@@ -4,7 +4,6 @@
     "name": "Writing & Content",
     "description": "AI tools for content creation, copywriting, and editing",
     "toolCount": 7,
-    "toolOfTheWeek": "grammarly",
     "listedTools": [
       {
         "name": "ChatGPT",
@@ -22,7 +21,8 @@
         "name": "Grammarly",
         "slug": "grammarly",
         "path": "/data/tools/grammarly.json",
-        "thumbnail": "https://www.grammarly.com/favicon.ico"
+        "thumbnail": "https://www.grammarly.com/favicon.ico",
+        "toolOfTheWeek": true
       },
       {
         "name": "Jasper AI",
@@ -55,13 +55,13 @@
     "name": "Image & Design",
     "description": "Create, edit, and enhance images with AI",
     "toolCount": 6,
-    "toolOfTheWeek": "midjourney",
     "listedTools": [
       {
         "name": "Midjourney",
         "slug": "midjourney",
         "path": "/data/tools/midjourney.json",
-        "thumbnail": "https://www.midjourney.com/favicon.ico"
+        "thumbnail": "https://www.midjourney.com/favicon.ico",
+        "toolOfTheWeek": true
       },
       {
         "name": "DALL-E 3",
@@ -100,13 +100,13 @@
     "name": "Data & Analytics",
     "description": "Analyze data and generate insights with AI",
     "toolCount": 2,
-    "toolOfTheWeek": "tableau-ai",
     "listedTools": [
       {
         "name": "Tableau AI",
         "slug": "tableau-ai",
         "path": "/data/tools/tableau-ai.json",
-        "thumbnail": "https://www.tableau.com/favicon.ico"
+        "thumbnail": "https://www.tableau.com/favicon.ico",
+        "toolOfTheWeek": true
       },
       {
         "name": "DataRobot",
@@ -121,7 +121,6 @@
     "name": "Productivity",
     "description": "Boost your workflow with AI-powered productivity tools",
     "toolCount": 10,
-    "toolOfTheWeek": "notion-ai",
     "listedTools": [
       {
         "name": "ChatGPT",
@@ -133,7 +132,8 @@
         "name": "Notion AI",
         "slug": "notion-ai",
         "path": "/data/tools/notion-ai.json",
-        "thumbnail": "https://www.notion.so/favicon.ico"
+        "thumbnail": "https://www.notion.so/favicon.ico",
+        "toolOfTheWeek": true
       },
       {
         "name": "Grammarly",
@@ -190,7 +190,6 @@
     "name": "Video & Audio",
     "description": "Generate, edit, and enhance video and audio content",
     "toolCount": 6,
-    "toolOfTheWeek": "elevenlabs",
     "listedTools": [
       {
         "name": "Synthesia",
@@ -214,7 +213,8 @@
         "name": "ElevenLabs",
         "slug": "elevenlabs",
         "path": "/data/tools/elevenlabs.json",
-        "thumbnail": "https://elevenlabs.io/favicon.ico"
+        "thumbnail": "https://elevenlabs.io/favicon.ico",
+        "toolOfTheWeek": true
       },
       {
         "name": "Krisp",
@@ -235,7 +235,6 @@
     "name": "Code & Development",
     "description": "AI assistants for coding and software development",
     "toolCount": 4,
-    "toolOfTheWeek": "github-copilot",
     "listedTools": [
       {
         "name": "ChatGPT",
@@ -247,7 +246,8 @@
         "name": "GitHub Copilot",
         "slug": "github-copilot",
         "path": "/data/tools/github-copilot.json",
-        "thumbnail": "https://github.com/favicon.ico"
+        "thumbnail": "https://github.com/favicon.ico",
+        "toolOfTheWeek": true
       },
       {
         "name": "Replit AI",
