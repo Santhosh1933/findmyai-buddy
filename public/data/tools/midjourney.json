@@ -9,8 +9,11 @@
   "thumbnailUrl": "https://www.midjourney.com/favicon.ico",
   "categories": ["Image & Design"],
   "tags": ["image-generation", "art", "design", "creative", "diffusion"],
-  "rating": 4.7,
-  "reviewCount": 8932,
   "featured": true,
-  "pricing": "Subscription starting at $10/month"
+  "pricing": "Subscription starting at $10/month",
+  "seo": {
+    "metaDescription": "Midjourney creates stunning AI-generated artwork and images from text descriptions with unparalleled artistic quality.",
+    "keywords": ["Midjourney", "AI art", "image generation", "AI artwork", "text to image"],
+    "linkType": "dofollow"
+  }
 }

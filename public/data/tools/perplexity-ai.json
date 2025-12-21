@@ -9,8 +9,11 @@
   "thumbnailUrl": "https://www.perplexity.ai/favicon.ico",
   "categories": ["Productivity"],
   "tags": ["search", "research", "question-answering", "information", "citations"],
-  "rating": 4.5,
-  "reviewCount": 4234,
   "featured": false,
-  "pricing": "Free with Pro at $20/month"
+  "pricing": "Free with Pro at $20/month",
+  "seo": {
+    "metaDescription": "Perplexity AI provides accurate answers to complex questions with real-time information and cited sources.",
+    "keywords": ["Perplexity AI", "AI search", "answer engine", "AI research", "question answering"],
+    "linkType": "dofollow"
+  }
 }

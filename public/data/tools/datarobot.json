@@ -9,8 +9,11 @@
   "thumbnailUrl": "https://www.datarobot.com/favicon.ico",
   "categories": ["Data & Analytics"],
   "tags": ["machine-learning", "enterprise", "automation", "mlops", "data-science"],
-  "rating": 4.5,
-  "reviewCount": 2341,
   "featured": false,
-  "pricing": "Enterprise pricing"
+  "pricing": "Enterprise pricing",
+  "seo": {
+    "metaDescription": "DataRobot accelerates AI development with automated machine learning and deployment at scale.",
+    "keywords": ["DataRobot", "enterprise AI", "machine learning", "MLOps", "AI platform"],
+    "linkType": "dofollow"
+  }
 }

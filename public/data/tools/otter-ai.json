@@ -9,8 +9,11 @@
   "thumbnailUrl": "https://otter.ai/favicon.ico",
   "categories": ["Productivity"],
   "tags": ["transcription", "meetings", "notes", "collaboration", "voice-to-text"],
-  "rating": 4.7,
-  "reviewCount": 9876,
   "featured": false,
-  "pricing": "Free plan available, Pro at $10/month"
+  "pricing": "Free plan available, Pro at $10/month",
+  "seo": {
+    "metaDescription": "Otter.ai transcribes meetings in real-time, generates summaries, and captures action items automatically.",
+    "keywords": ["Otter.ai", "AI transcription", "meeting notes", "AI meeting assistant", "voice to text"],
+    "linkType": "dofollow"
+  }
 }

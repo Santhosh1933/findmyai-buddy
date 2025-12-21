@@ -9,8 +9,11 @@
   "thumbnailUrl": "https://www.canva.com/favicon.ico",
   "categories": ["Image & Design", "Productivity"],
   "tags": ["design", "graphics", "templates", "image-editing", "branding"],
-  "rating": 4.8,
-  "reviewCount": 23451,
   "featured": true,
-  "pricing": "Free plan available, Pro at $13/month"
+  "pricing": "Free plan available, Pro at $13/month",
+  "seo": {
+    "metaDescription": "Canva AI brings magic to design with AI-powered tools for image generation, editing, and content creation.",
+    "keywords": ["Canva AI", "AI design", "graphic design", "Magic Studio", "design tool"],
+    "linkType": "dofollow"
+  }
 }

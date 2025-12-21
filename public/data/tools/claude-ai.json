@@ -9,8 +9,11 @@
   "thumbnailUrl": "https://claude.ai/favicon.ico",
   "categories": ["Writing & Content", "Productivity"],
   "tags": ["conversational-ai", "assistant", "writing", "analysis", "research"],
-  "rating": 4.7,
-  "reviewCount": 8765,
   "featured": true,
-  "pricing": "Free with Pro at $20/month"
+  "pricing": "Free with Pro at $20/month",
+  "seo": {
+    "metaDescription": "Claude AI by Anthropic offers thoughtful, nuanced conversations for writing, analysis, and complex reasoning tasks.",
+    "keywords": ["Claude AI", "Anthropic", "AI assistant", "conversational AI", "writing tool"],
+    "linkType": "dofollow"
+  }
 }

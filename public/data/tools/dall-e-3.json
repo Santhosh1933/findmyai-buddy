@@ -9,8 +9,11 @@
   "thumbnailUrl": "https://openai.com/favicon.ico",
   "categories": ["Image & Design"],
   "tags": ["image-generation", "art", "creative", "design", "ai-art"],
-  "rating": 4.7,
-  "reviewCount": 9234,
   "featured": true,
-  "pricing": "Available with ChatGPT Plus at $20/month"
+  "pricing": "Available with ChatGPT Plus at $20/month",
+  "seo": {
+    "metaDescription": "DALL-E 3 by OpenAI generates highly detailed and accurate images from natural language descriptions.",
+    "keywords": ["DALL-E 3", "AI image generation", "text to image", "OpenAI", "AI art"],
+    "linkType": "dofollow"
+  }
 }

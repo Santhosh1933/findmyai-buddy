@@ -9,8 +9,11 @@
   "thumbnailUrl": "https://elevenlabs.io/favicon.ico",
   "categories": ["Video & Audio"],
   "tags": ["voice-synthesis", "text-to-speech", "voice-cloning", "audio", "voiceover"],
-  "rating": 4.8,
-  "reviewCount": 6543,
   "featured": false,
-  "pricing": "Free plan available, Starter at $5/month"
+  "pricing": "Free plan available, Starter at $5/month",
+  "seo": {
+    "metaDescription": "ElevenLabs creates realistic AI voices and voice cloning for content creators, developers, and businesses.",
+    "keywords": ["ElevenLabs", "AI voice", "voice cloning", "text to speech", "voice generation"],
+    "linkType": "dofollow"
+  }
 }

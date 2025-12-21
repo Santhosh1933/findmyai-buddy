@@ -9,8 +9,11 @@
   "thumbnailUrl": "https://tome.app/favicon.ico",
   "categories": ["Productivity", "Image & Design"],
   "tags": ["presentations", "storytelling", "design", "slides", "content-creation"],
-  "rating": 4.5,
-  "reviewCount": 3987,
   "featured": false,
-  "pricing": "Free plan available, Pro at $10/month"
+  "pricing": "Free plan available, Pro at $10/month",
+  "seo": {
+    "metaDescription": "Tome creates stunning presentations and narratives using AI, transforming your ideas into polished stories.",
+    "keywords": ["Tome", "AI presentations", "storytelling AI", "AI slides", "presentation maker"],
+    "linkType": "dofollow"
+  }
 }

@@ -1,3 +1,9 @@
+export interface ToolSEO {
+  metaDescription: string;
+  keywords: string[];
+  linkType: 'dofollow' | 'nofollow';
+}
+
 export interface Tool {
   id: string;
   name: string;
@@ -9,10 +15,9 @@ export interface Tool {
   thumbnailUrl: string;
   categories: string[];
   tags: string[];
-  rating: number;
-  reviewCount: number;
   featured: boolean;
   pricing: string;
+  seo: ToolSEO;
 }
 
 export interface ListedTool {

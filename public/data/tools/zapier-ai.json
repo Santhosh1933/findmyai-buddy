@@ -9,8 +9,11 @@
   "thumbnailUrl": "https://zapier.com/favicon.ico",
   "categories": ["Productivity"],
   "tags": ["automation", "workflow", "integration", "productivity", "no-code"],
-  "rating": 4.7,
-  "reviewCount": 8932,
   "featured": false,
-  "pricing": "Free plan available, Starter at $20/month"
+  "pricing": "Free plan available, Starter at $20/month",
+  "seo": {
+    "metaDescription": "Zapier AI helps you create powerful automation workflows using natural language and intelligent triggers.",
+    "keywords": ["Zapier AI", "workflow automation", "AI automation", "app integration", "no-code"],
+    "linkType": "dofollow"
+  }
 }
